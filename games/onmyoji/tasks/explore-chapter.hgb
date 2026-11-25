@@ -1,0 +1,217 @@
+名称: 章节探索与妖气
+分类: battle
+优先级: 11
+说明: 前往探索大地图清理第二十八章（困28），并支持一键挑战经验妖怪、金币妖怪、年兽与石距宝船等妖气副本
+
+设置: [
+  {
+    "id": "soulPreset",
+    "label": "开战前自动切换御魂预设",
+    "widget": "SINGLE_CHOICE",
+    "required": true,
+    "section": "御魂预设",
+    "description": "开战前自动前往庭院式神录→预设面板，一键装配指定分组与队伍的御魂预设",
+    "recommended": "none",
+    "options": [
+      {"value": "none", "label": "不切换（保持当前身上御魂）"},
+      {"value": "1-1", "label": "分组 1 · 队伍 1"},
+      {"value": "1-2", "label": "分组 1 · 队伍 2"},
+      {"value": "1-3", "label": "分组 1 · 队伍 3"},
+      {"value": "1-4", "label": "分组 1 · 队伍 4"},
+      {"value": "2-1", "label": "分组 2 · 队伍 1"},
+      {"value": "2-2", "label": "分组 2 · 队伍 2"},
+      {"value": "2-3", "label": "分组 2 · 队伍 3"},
+      {"value": "2-4", "label": "分组 2 · 队伍 4"},
+      {"value": "3-1", "label": "分组 3 · 队伍 1"},
+      {"value": "3-2", "label": "分组 3 · 队伍 2"},
+      {"value": "3-3", "label": "分组 3 · 队伍 3"},
+      {"value": "3-4", "label": "分组 3 · 队伍 4"},
+      {"value": "4-1", "label": "分组 4 · 队伍 1"},
+      {"value": "4-2", "label": "分组 4 · 队伍 2"},
+      {"value": "4-3", "label": "分组 4 · 队伍 3"},
+      {"value": "4-4", "label": "分组 4 · 队伍 4"},
+      {"value": "5-1", "label": "分组 5 · 队伍 1"},
+      {"value": "5-2", "label": "分组 5 · 队伍 2"},
+      {"value": "5-3", "label": "分组 5 · 队伍 3"},
+      {"value": "5-4", "label": "分组 5 · 队伍 4"},
+      {"value": "6-1", "label": "分组 6 · 队伍 1"},
+      {"value": "6-2", "label": "分组 6 · 队伍 2"},
+      {"value": "6-3", "label": "分组 6 · 队伍 3"},
+      {"value": "6-4", "label": "分组 6 · 队伍 4"},
+      {"value": "7-1", "label": "分组 7 · 队伍 1"},
+      {"value": "7-2", "label": "分组 7 · 队伍 2"},
+      {"value": "7-3", "label": "分组 7 · 队伍 3"},
+      {"value": "7-4", "label": "分组 7 · 队伍 4"}
+    ]
+  },
+  {
+    "id": "doChapter",
+    "label": "执行第二十八章（困28）探索",
+    "widget": "SWITCH",
+    "section": "章节探索",
+    "description": "进入第二十八章清理小怪与首领",
+    "recommended": true
+  },
+  {
+    "id": "chapterMode",
+    "label": "章节探索方式",
+    "widget": "SINGLE_CHOICE",
+    "required": true,
+    "section": "章节探索",
+    "description": "游戏内置自动挑战（需樱饼）省心稳定；无樱饼时可选手动滑屏寻怪",
+    "recommended": "autoChallenge",
+    "options": [
+      {"value": "autoChallenge", "label": "优先开启章节内“自动挑战”（推荐）"},
+      {"value": "manualSwipe", "label": "手动滑屏寻怪与挑战首领"}
+    ]
+  },
+  {
+    "id": "doExpYoukai",
+    "label": "挑战经验妖怪（每日 2 次组队经验车）",
+    "widget": "SWITCH",
+    "section": "妖气与宝船",
+    "description": "通过组队界面自动创建/加入经验妖怪房间完成每日 2 次挑战",
+    "recommended": false
+  },
+  {
+    "id": "doGoldYoukai",
+    "label": "挑战金币妖怪（每日 2 次组队金币车）",
+    "widget": "SWITCH",
+    "section": "妖气与宝船",
+    "description": "通过组队界面自动创建/加入金币妖怪房间完成每日 2 次挑战",
+    "recommended": false
+  },
+  {
+    "id": "doTakoNian",
+    "label": "顺带挑战探索地图上的石距或年兽",
+    "widget": "SWITCH",
+    "section": "妖气与宝船",
+    "description": "当探索地图底部出现石距或年兽副本图标时自动点开组队挑战",
+    "recommended": true
+  },
+  {
+    "id": "claimMapChest",
+    "label": "探索后领取左侧小纸人地图宝箱",
+    "widget": "SWITCH",
+    "section": "章节探索",
+    "description": "打完探索章节退回大地图时，若左侧出现探索宝箱则自动点开领取",
+    "recommended": true
+  },
+  {
+    "id": "returnHome",
+    "label": "完成后返回庭院",
+    "widget": "SWITCH",
+    "section": "收尾",
+    "description": "探索结束后自动退回庭院",
+    "recommended": true
+  }
+]
+
+=== switch-soul: 自动前往式神录切换御魂预设 ===
+[条件] soulPreset != "none"
+[超时] 90000ms
+[片段] switch-soul-preset
+
+=== enter-explore: 前往探索大地图 ===
+
+去 探索地图
+等 页 explore 最多 12秒
+
+=== clear-chapter: 进入第二十八章并按模式清理 ===
+[条件] doChapter = true
+[超时] 300000ms
+
+长等待 300秒
+如果看到 "第二十八章"@探索章节列表 最多 5秒
+  点 "第二十八章"@探索章节列表
+按设置 chapterMode
+  "autoChallenge"
+    用 wq-explore
+  "manualSwipe"
+    如果看到 "探索"@探索进入按钮 最多 5秒
+      点 "探索"@探索进入按钮
+    # 若有樱饼则优先开启自动挑战，否则滑屏检索小怪经验/挑战标记并退出回大地图
+    如果看到 色 自动挑战-关 容差 30 最多 4秒
+      点 色 自动挑战-关 容差 30
+    反复 最多 8 次
+      如果看到 "探索"@探索进入按钮 最多 4.5秒
+        点 色 章节返回 偏 0,12
+        跳出
+      否则
+        如果看到 "主线"@1940,230,180,90 最多 4.5秒
+          跳出
+        否则
+          如果看到 "继续"@结算底部继续 最多 4.5秒
+            点 "继续"@结算底部继续 最多 2秒
+          否则
+            如果看到 "自动挑战"@1860,960,190,80 最多 4.5秒
+              拖 "自动挑战"@1860,960,190,80 偏 -200,-450 到 -850,0 时长 0.6秒
+    如果看到 "自动挑战"@1860,960,190,80 最多 4.5秒
+      点 色 章节返回 偏 0,12
+      如果看到 "确认"@弹窗确认右侧 最多 4.5秒
+        点 "确认"@弹窗确认右侧
+      如果看到 "确定"@弹窗确认右侧 最多 4.5秒
+        点 "确定"@弹窗确认右侧
+    如果看到 "探索"@探索进入按钮 最多 4.5秒
+      点 色 章节返回 偏 0,12
+等 页 explore 最多 15秒
+结果 "已完成探索章节清理"
+
+=== hunt-exp-youkai: 组队挑战经验妖怪 ===
+[条件] doExpYoukai = true
+[超时] 180000ms
+
+去 庭院
+用 menu
+如果看到 "组队"@庭院组队 最多 4秒
+  点 "组队"@庭院组队 偏 -40,-110 大小 80,80
+  如果看到 "经验妖怪"@组队左侧分类 最多 5秒
+    点 "经验妖怪"@组队左侧分类
+    如果看到 "创建队伍"@组队右下按钮 最多 4秒
+      点 "创建队伍"@组队右下按钮
+      如果看到 "创建"@弹窗按钮区 最多 4秒
+        点 "创建"@弹窗按钮区
+        用 battle-auto-loop
+结果 "已完成经验妖怪检查"
+去 探索地图
+
+=== hunt-gold-youkai: 组队挑战金币妖怪 ===
+[条件] doGoldYoukai = true
+[超时] 180000ms
+
+去 庭院
+用 menu
+如果看到 "组队"@庭院组队 最多 4秒
+  点 "组队"@庭院组队 偏 -40,-110 大小 80,80
+  如果看到 "金币妖怪"@组队左侧分类 最多 5秒
+    点 "金币妖怪"@组队左侧分类
+    如果看到 "创建队伍"@组队右下按钮 最多 4秒
+      点 "创建队伍"@组队右下按钮
+      如果看到 "创建"@弹窗按钮区 最多 4秒
+        点 "创建"@弹窗按钮区
+        用 battle-auto-loop
+结果 "已完成金币妖怪检查"
+去 探索地图
+
+=== hunt-tako-nian: 挑战探索地图石距或年兽 ===
+[条件] doTakoNian = true
+[超时] 180000ms
+
+去 探索地图
+如果看到 "石距"@300,300,1600,580 最多 4.5秒
+  点 "石距"@300,300,1600,580
+  如果看到 "挑战"@右下挑战区 最多 4秒
+    点 "挑战"@右下挑战区
+    用 battle-auto-loop
+等 页 explore 最多 10秒
+
+=== claim-chest: 检查并领取探索地图宝箱 ===
+[条件] claimMapChest = true
+
+如果看到 "获得奖励"@获得奖励标题 最多 4.5秒
+  点 "获得奖励"@获得奖励标题 偏 -60,555 大小 120,80
+等 页 explore 最多 10秒
+
+=== return-courtyard: 回到庭院 ===
+[条件] returnHome = true
+[片段] go-courtyard

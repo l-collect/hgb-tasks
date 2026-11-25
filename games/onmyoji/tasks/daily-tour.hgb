@@ -1,9 +1,25 @@
-名称: 日常巡游
+名称: 日常琐事
 分类: daily
 优先级: 10
-说明: 按勾选顺序依次完成每日礼包、花合战、庭院事务、邮件、友情点与寮资金
+说明: 一站式完成庭院与阴阳寮全部日常琐事：每日礼包、花合战、庭院事务一键完成、邮件领取、收送友情点、阴阳寮资金、宠物小屋投喂与寮集体任务（寮30）材料提交
 
 设置: [
+  {
+    "id": "doDailyGift",
+    "label": "领取商店每日免费礼包",
+    "widget": "SWITCH",
+    "section": "庭院日常",
+    "description": "当底部商店图标有红点时前往礼包屋日常页领取免费礼包",
+    "recommended": true
+  },
+  {
+    "id": "doFlower",
+    "label": "领取花合战经验与奖励",
+    "widget": "SWITCH",
+    "section": "庭院日常",
+    "description": "当花合战图标有红点时前往任务页与奖励页一键领取",
+    "recommended": true
+  },
   {
     "id": "flowerChoice",
     "label": "花札三选一礼盒",
@@ -13,23 +29,59 @@
     "description": "领取花合战奖励遇到三选一礼盒时选哪一项",
     "recommended": "none",
     "options": [
-      {
-        "value": "none",
-        "label": "不选，停下来由我处理"
-      },
-      {
-        "value": "soul",
-        "label": "御魂养成"
-      },
-      {
-        "value": "currency",
-        "label": "货币"
-      },
-      {
-        "value": "stamina",
-        "label": "玩法体力"
-      }
+      {"value": "none", "label": "不选，停下来由我处理"},
+      {"value": "soul", "label": "御魂养成"},
+      {"value": "currency", "label": "货币"},
+      {"value": "stamina", "label": "玩法体力"}
     ]
+  },
+  {
+    "id": "doOneclick",
+    "label": "庭院事务一键完成",
+    "widget": "SWITCH",
+    "section": "庭院日常",
+    "description": "点击庭院小纸人头顶事务图标一键完成日常并解签",
+    "recommended": true
+  },
+  {
+    "id": "doMail",
+    "label": "领取邮箱全部附件",
+    "widget": "SWITCH",
+    "section": "庭院日常",
+    "description": "前往庭院右上角邮箱一键领取全部邮件奖励",
+    "recommended": true
+  },
+  {
+    "id": "doFriendship",
+    "label": "好友收送友情点",
+    "widget": "SWITCH",
+    "section": "庭院日常",
+    "description": "前往好友列表一键收取与赠送友情点",
+    "recommended": true
+  },
+  {
+    "id": "doPets",
+    "label": "宠物小屋快速喂养与后院放置食材",
+    "widget": "SWITCH",
+    "section": "宠物与寮日常",
+    "description": "从庭院进入宠物小屋执行“快速喂养”领协战御魂，并在宠物后院放置排骨/鲜鱼食材",
+    "recommended": true
+  },
+  {
+    "id": "doGuildFunds",
+    "label": "领取阴阳寮每日资金",
+    "widget": "SWITCH",
+    "section": "宠物与寮日常",
+    "description": "前往阴阳寮信息页领取每日寮资金补给",
+    "recommended": true
+  },
+  {
+    "id": "doGuildMissions",
+    "label": "阴阳寮集体任务（寮30）提交觉醒或御灵材料",
+    "widget": "SWITCH",
+    "section": "宠物与寮日常",
+    "description": "前往阴阳寮神社→集体任务，自动检测并提交觉醒/御灵材料完成每日 30 次寮任务",
+    "recommended": false
   }
 ]
 
@@ -37,19 +89,63 @@
 [片段] go-courtyard
 
 === daily-gift: 每日礼包（商店有红点才去） ===
+[条件] doDailyGift = true
 [片段] daily-gift-step
 
 === flower: 花合战（有红点才去） ===
+[条件] doFlower = true
 [片段] flower-step
 
 === oneclick: 庭院事务一键完成 ===
+[条件] doOneclick = true
 [片段] oneclick-step
 
 === mail: 领取邮件附件 ===
+[条件] doMail = true
 [片段] mail-step
 
 === friendship: 收送友情点 ===
+[条件] doFriendship = true
 [片段] friendship-step
 
+=== pets-feed: 宠物小屋快速喂养与后院食材 ===
+[条件] doPets = true
+
+去 庭院
+# 点击庭院右侧小动物木屋（守）进入宠物小屋，再执行快速喂养与放置食材
+如果看到 "守"@右:1680,460,240,200 最多 4.5秒
+  点 "守"@右:1680,460,240,200
+否则
+  点 "探索"@800,100,700,320 偏 560,340 大小 100,90
+如果看到 "快速喂养"@宠物快速喂养区 最多 5秒
+  点 "快速喂养"@宠物快速喂养区
+  如果看到 "喂食"@宠物快速喂养区 最多 4秒
+    点 "喂食"@宠物快速喂养区
+  如果看到 "获得奖励"@获得奖励标题 最多 4秒
+    点 "获得奖励"@获得奖励标题 偏 -60,555 大小 120,80
+如果看到 "后院"@宠物快速喂养区 最多 4.5秒
+  点 "后院"@宠物快速喂养区
+如果看到 "放置食材"@宠物快速喂养区 最多 4.5秒
+  点 "放置食材"@宠物快速喂养区
+结果 "已检查宠物小屋喂食与后院食材"
+去 庭院
+
 === guild: 领取阴阳寮资金 ===
+[条件] doGuildFunds = true
 [片段] guild-step
+
+=== guild-missions: 阴阳寮集体任务（寮30）材料提交 ===
+[条件] doGuildMissions = true
+
+去 阴阳寮
+如果看到 "神社"@右:1640,860,165,210 最多 5秒
+  点 "神社"@右:1640,860,165,210 整行 偏 -40,-75 大小 80,70
+如果看到 "集体任务"@神社列表区 最多 5秒
+  点 "集体任务"@神社列表区
+  如果看到 "提交"@340,660,1600,200 最多 5秒
+    点 "提交"@340,660,1600,200
+    如果看到 "提交"@弹窗按钮区 最多 4秒
+      点 "提交"@弹窗按钮区
+      如果看到 "获得奖励"@获得奖励标题 最多 5秒
+        点 "获得奖励"@获得奖励标题 偏 -60,555 大小 120,80
+去 庭院
