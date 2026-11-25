@@ -1,0 +1,1487 @@
+{
+  "formatVersion": 1,
+  "target": {
+    "id": "onmyoji",
+    "name": "阴阳师",
+    "androidPackages": [
+      "com.netease.onmyoji"
+    ],
+    "identityPolicy": "NONE",
+    "categories": [
+      {
+        "id": "daily",
+        "name": "日常"
+      }
+    ],
+    "library": {
+      "interruptions": [
+        {
+          "id": "lost-connection",
+          "name": "断线重连",
+          "state": {
+            "id": "lost-connection",
+            "text": [
+              {
+                "text": "已断开游戏服务器",
+                "minimumConfidence": 0.8,
+                "within": [
+                  850,
+                  430,
+                  700,
+                  120
+                ],
+                "contains": true
+              }
+            ]
+          },
+          "use": "tap-confirm"
+        },
+        {
+          "id": "bounty-invite",
+          "name": "悬赏邀请",
+          "state": {
+            "id": "bounty-invite",
+            "text": [
+              {
+                "text": "协助悬赏封印",
+                "minimumConfidence": 0.8,
+                "within": [
+                  1000,
+                  50,
+                  440,
+                  100
+                ],
+                "contains": true
+              }
+            ]
+          },
+          "maximum": 3,
+          "choices": [
+            {
+              "id": "reject",
+              "name": "拒绝",
+              "use": "tap-reject"
+            },
+            {
+              "id": "accept",
+              "name": "接受",
+              "use": "bounty-accept"
+            }
+          ]
+        },
+        {
+          "id": "pack-download",
+          "name": "扩展包下载",
+          "state": {
+            "id": "pack-download",
+            "text": [
+              {
+                "text": "扩展包下载",
+                "minimumConfidence": 0.8,
+                "within": [
+                  850,
+                  280,
+                  700,
+                  100
+                ],
+                "contains": true
+              }
+            ],
+            "absentText": [
+              {
+                "text": "阴阳寮",
+                "minimumConfidence": 0.8,
+                "within": [
+                  850,
+                  280,
+                  700,
+                  100
+                ],
+                "contains": true
+              }
+            ]
+          },
+          "use": "tap-cancel"
+        },
+        {
+          "id": "new-shikigami",
+          "name": "新式神展示",
+          "state": {
+            "id": "new-shikigami",
+            "text": [
+              {
+                "text": "获得",
+                "minimumConfidence": 0.8,
+                "within": [
+                  650,
+                  20,
+                  250,
+                  320
+                ]
+              }
+            ]
+          },
+          "use": "close-new-shikigami"
+        }
+      ],
+      "colors": {
+        "突破列表": [
+          "1000,140#4A3625",
+          "1380,140#463323",
+          "1190,100#745531",
+          "1565,895#493625",
+          "330,700#A19C9A"
+        ],
+        "突破卡-未破": [
+          "300,20#DACBBC",
+          "20,165#CFBAAD",
+          "450,165#DACDBD",
+          "10,90#D7C8B8",
+          "200,20#DACBBC"
+        ],
+        "突破卡-已破": [
+          "300,20#6D655E",
+          "20,165#675D56",
+          "450,165#6D665E",
+          "10,90#6B645C",
+          "393,60#CFBFAC",
+          "434,92#681727"
+        ],
+        "准备页返回": [
+          "164,38#D9B791",
+          "188,44#D7B189",
+          "170,44#332C2F",
+          "170,62#CDA376",
+          "146,50#211B21"
+        ],
+        "突破列表-暗": [
+          "1000,140#251B12",
+          "1380,140#231911",
+          "1190,100#3A2A18",
+          "1565,895#241B12",
+          "330,700#504E4D"
+        ],
+        "进攻按钮": [
+          "292,340#F3B25E",
+          "422,340#F3B25E",
+          "292,385#F3B25E",
+          "422,385#F3B25E"
+        ],
+        "再次挑战": [
+          "1540,750#E3D8CB",
+          "1530,760#F9EFE4",
+          "1520,780#FFF5EC",
+          "1510,790#FDFAF4",
+          "1570,720#822516",
+          "1580,700#BD482E"
+        ],
+        "自动挑战-关": [
+          "1838,1003#6A6A6B",
+          "1856,1003#6E6E6E",
+          "1844,1009#6B6B6C",
+          "1862,1009#676767"
+        ],
+        "悬赏卷轴": [
+          "1050,105#1A120A",
+          "1350,105#603F1E",
+          "2015,120#231F1E",
+          "460,105#120C0A",
+          "1980,145#1A1613"
+        ],
+        "邮箱卷轴": [
+          "1080,110#684632",
+          "1310,110#6A4934",
+          "1970,148#5C2A28",
+          "500,150#A1907D"
+        ],
+        "庭院町中牌": [
+          "1374,369#ADA79F",
+          "1332,390#B5AFBB",
+          "1326,402#B5B5B3",
+          "1332,414#B9AFA3",
+          "1353,444#B3AA93"
+        ],
+        "追踪栏头像框": [
+          "6,-44#4F4338",
+          "-46,-24#AC9063",
+          "42,-24#463B32",
+          "48,0#493E32",
+          "-40,24#433A31",
+          "40,26#463E34"
+        ],
+        "前往按钮": [
+          "-32,-14#6A4829",
+          "40,-6#775025",
+          "-38,4#6A4829",
+          "38,12#775326",
+          "-8,18#6A4728",
+          "22,-22#6A4728"
+        ],
+        "章节返回": [
+          "152,15#4B3624",
+          "188,33#EFD590",
+          "170,39#F7EAAD",
+          "166,47#F7EAAC",
+          "182,55#F1DD9C",
+          "198,63#A6703E",
+          "174,71#A06B3C"
+        ]
+      },
+      "states": [
+        {
+          "id": "courtyard",
+          "name": "庭院",
+          "present": [
+            {
+              "template": "mail-icon",
+              "minimumScore": 0.9,
+              "within": [
+                1900,
+                0,
+                500,
+                140
+              ]
+            }
+          ],
+          "text": [
+            {
+              "text": "探索",
+              "minimumConfidence": 0.8,
+              "within": [
+                800,
+                100,
+                700,
+                320
+              ],
+              "contains": true
+            }
+          ],
+          "absentText": [
+            {
+              "text": "获得奖励",
+              "minimumConfidence": 0.8,
+              "within": [
+                800,
+                150,
+                800,
+                320
+              ],
+              "contains": true
+            },
+            {
+              "text": "今日最佳奖励",
+              "minimumConfidence": 0.8,
+              "within": [
+                980,
+                630,
+                440,
+                90
+              ],
+              "contains": true
+            },
+            {
+              "text": "累计奖励",
+              "minimumConfidence": 0.8,
+              "within": [
+                920,
+                730,
+                200,
+                70
+              ],
+              "contains": true
+            },
+            {
+              "text": "庭院事务",
+              "minimumConfidence": 0.8,
+              "within": [
+                620,
+                50,
+                400,
+                110
+              ],
+              "contains": true
+            }
+          ]
+        },
+        {
+          "id": "login",
+          "name": "登录页",
+          "text": [
+            {
+              "text": "进入游戏",
+              "minimumConfidence": 0.8,
+              "within": [
+                1000,
+                840,
+                400,
+                110
+              ],
+              "contains": true
+            },
+            {
+              "text": "公告",
+              "minimumConfidence": 0.8,
+              "within": [
+                2140,
+                130,
+                180,
+                100
+              ],
+              "contains": true
+            }
+          ]
+        },
+        {
+          "id": "explore",
+          "name": "探索地图",
+          "text": [
+            {
+              "text": "主线",
+              "minimumConfidence": 0.8,
+              "within": [
+                1940,
+                230,
+                180,
+                90
+              ],
+              "contains": true
+            },
+            {
+              "text": "结界突破",
+              "minimumConfidence": 0.8,
+              "within": [
+                320,
+                960,
+                480,
+                110
+              ],
+              "contains": true
+            }
+          ],
+          "absentText": [
+            {
+              "text": "悬赏目标",
+              "minimumConfidence": 0.8,
+              "within": [
+                1180,
+                230,
+                500,
+                70
+              ],
+              "contains": true
+            }
+          ]
+        },
+        {
+          "id": "realm-breach",
+          "name": "结界突破",
+          "colors": [
+            {
+              "set": "突破列表"
+            }
+          ],
+          "text": [
+            {
+              "text": "结界突破",
+              "minimumConfidence": 0.8,
+              "within": [
+                1040,
+                80,
+                300,
+                110
+              ],
+              "contains": true
+            }
+          ]
+        },
+        {
+          "id": "bounty-list",
+          "name": "悬赏封印",
+          "colors": [
+            {
+              "set": "悬赏卷轴"
+            }
+          ],
+          "text": [
+            {
+              "text": "封印",
+              "minimumConfidence": 0.8,
+              "within": [
+                1080,
+                60,
+                300,
+                90
+              ],
+              "contains": true
+            },
+            {
+              "text": "刷新",
+              "minimumConfidence": 0.8,
+              "within": [
+                950,
+                890,
+                500,
+                90
+              ],
+              "contains": true
+            }
+          ],
+          "absentText": [
+            {
+              "text": "悬赏目标",
+              "minimumConfidence": 0.8,
+              "within": [
+                1180,
+                230,
+                500,
+                70
+              ],
+              "contains": true
+            },
+            {
+              "text": "获得奖励",
+              "minimumConfidence": 0.8,
+              "within": [
+                800,
+                150,
+                800,
+                320
+              ],
+              "contains": true
+            }
+          ]
+        },
+        {
+          "id": "shop",
+          "name": "商店",
+          "present": [
+            {
+              "template": "home-icon",
+              "minimumScore": 0.8,
+              "within": [
+                220,
+                0,
+                160,
+                120
+              ]
+            }
+          ],
+          "text": [
+            {
+              "text": "礼包屋",
+              "minimumConfidence": 0.8,
+              "within": [
+                1860,
+                960,
+                300,
+                100
+              ],
+              "contains": true
+            }
+          ],
+          "absentText": [
+            {
+              "text": "取消",
+              "minimumConfidence": 0.8,
+              "within": [
+                800,
+                650,
+                800,
+                120
+              ],
+              "contains": true
+            },
+            {
+              "text": "确定",
+              "minimumConfidence": 0.8,
+              "within": [
+                800,
+                650,
+                800,
+                120
+              ],
+              "contains": true
+            },
+            {
+              "text": "获得奖励",
+              "minimumConfidence": 0.8,
+              "within": [
+                800,
+                150,
+                800,
+                320
+              ],
+              "contains": true
+            },
+            {
+              "text": "御行达摩的赠礼",
+              "minimumConfidence": 0.8,
+              "within": [
+                500,
+                230,
+                500,
+                130
+              ],
+              "contains": true
+            }
+          ]
+        },
+        {
+          "id": "gift-daily",
+          "name": "礼包屋日常",
+          "present": [
+            {
+              "template": "home-icon",
+              "minimumScore": 0.8,
+              "within": [
+                220,
+                0,
+                160,
+                120
+              ]
+            }
+          ],
+          "text": [
+            {
+              "text": "礼包屋",
+              "minimumConfidence": 0.8,
+              "within": [
+                1860,
+                960,
+                300,
+                100
+              ],
+              "contains": true
+            },
+            {
+              "text": "每日礼包",
+              "minimumConfidence": 0.8,
+              "within": [
+                440,
+                180,
+                320,
+                100
+              ],
+              "contains": true
+            }
+          ],
+          "absentText": [
+            {
+              "text": "取消",
+              "minimumConfidence": 0.8,
+              "within": [
+                800,
+                650,
+                800,
+                120
+              ],
+              "contains": true
+            },
+            {
+              "text": "确定",
+              "minimumConfidence": 0.8,
+              "within": [
+                800,
+                650,
+                800,
+                120
+              ],
+              "contains": true
+            },
+            {
+              "text": "获得奖励",
+              "minimumConfidence": 0.8,
+              "within": [
+                800,
+                150,
+                800,
+                320
+              ],
+              "contains": true
+            },
+            {
+              "text": "御行达摩的赠礼",
+              "minimumConfidence": 0.8,
+              "within": [
+                500,
+                230,
+                500,
+                130
+              ],
+              "contains": true
+            }
+          ]
+        },
+        {
+          "id": "flower",
+          "name": "花合战",
+          "text": [
+            {
+              "text": "花合战",
+              "minimumConfidence": 0.8,
+              "within": [
+                240,
+                20,
+                220,
+                90
+              ],
+              "contains": true
+            },
+            {
+              "text": "奖励",
+              "minimumConfidence": 0.8,
+              "within": [
+                1980,
+                240,
+                140,
+                190
+              ],
+              "contains": true
+            }
+          ],
+          "absentText": [
+            {
+              "text": "获得奖励",
+              "minimumConfidence": 0.8,
+              "within": [
+                800,
+                150,
+                800,
+                320
+              ],
+              "contains": true
+            },
+            {
+              "text": "选择",
+              "minimumConfidence": 0.8,
+              "within": [
+                1080,
+                640,
+                240,
+                110
+              ],
+              "contains": true
+            }
+          ]
+        },
+        {
+          "id": "mail",
+          "name": "邮箱",
+          "colors": [
+            {
+              "set": "邮箱卷轴"
+            }
+          ],
+          "text": [
+            {
+              "text": "邮箱",
+              "minimumConfidence": 0.8,
+              "within": [
+                1080,
+                70,
+                240,
+                100
+              ],
+              "contains": true
+            },
+            {
+              "text": "邮件",
+              "minimumConfidence": 0.8,
+              "within": [
+                1990,
+                290,
+                120,
+                460
+              ],
+              "contains": true
+            }
+          ],
+          "absentText": [
+            {
+              "text": "获得奖励",
+              "minimumConfidence": 0.8,
+              "within": [
+                800,
+                150,
+                800,
+                320
+              ],
+              "contains": true
+            },
+            {
+              "text": "全部领取",
+              "minimumConfidence": 0.8,
+              "within": [
+                980,
+                80,
+                420,
+                110
+              ],
+              "contains": true
+            }
+          ]
+        },
+        {
+          "id": "friends",
+          "name": "好友",
+          "text": [
+            {
+              "text": "好友",
+              "minimumConfidence": 0.8,
+              "within": [
+                1080,
+                60,
+                240,
+                90
+              ],
+              "contains": false
+            },
+            {
+              "text": "好友",
+              "minimumConfidence": 0.8,
+              "within": [
+                430,
+                130,
+                200,
+                90
+              ],
+              "contains": true
+            }
+          ],
+          "absentText": [
+            {
+              "text": "获得奖励",
+              "minimumConfidence": 0.8,
+              "within": [
+                800,
+                150,
+                800,
+                320
+              ],
+              "contains": true
+            }
+          ]
+        },
+        {
+          "id": "guild",
+          "name": "阴阳寮",
+          "present": [
+            {
+              "template": "realm-back",
+              "minimumScore": 0.85,
+              "within": [
+                100,
+                0,
+                220,
+                130
+              ]
+            }
+          ],
+          "text": [
+            {
+              "text": "寮信息",
+              "minimumConfidence": 0.8,
+              "within": [
+                2040,
+                990,
+                280,
+                90
+              ],
+              "contains": true
+            }
+          ],
+          "absentText": [
+            {
+              "text": "获得奖励",
+              "minimumConfidence": 0.8,
+              "within": [
+                800,
+                150,
+                800,
+                320
+              ],
+              "contains": true
+            },
+            {
+              "text": "资金领取",
+              "minimumConfidence": 0.8,
+              "within": [
+                540,
+                890,
+                300,
+                100
+              ],
+              "contains": true
+            }
+          ]
+        },
+        {
+          "id": "realm",
+          "name": "结界",
+          "present": [
+            {
+              "template": "realm-back",
+              "minimumScore": 0.85,
+              "within": [
+                100,
+                0,
+                220,
+                130
+              ]
+            },
+            {
+              "template": "realm-training",
+              "minimumScore": 0.8,
+              "within": [
+                1000,
+                330,
+                320,
+                400
+              ]
+            }
+          ],
+          "absentText": [
+            {
+              "text": "寮信息",
+              "minimumConfidence": 0.8,
+              "within": [
+                2040,
+                990,
+                280,
+                90
+              ],
+              "contains": true
+            },
+            {
+              "text": "体力食盒",
+              "minimumConfidence": 0.8,
+              "within": [
+                1000,
+                110,
+                450,
+                140
+              ],
+              "contains": true
+            },
+            {
+              "text": "经验酒壶",
+              "minimumConfidence": 0.8,
+              "within": [
+                1000,
+                110,
+                450,
+                140
+              ],
+              "contains": true
+            },
+            {
+              "text": "结界卡",
+              "minimumConfidence": 0.8,
+              "within": [
+                1080,
+                50,
+                320,
+                100
+              ],
+              "contains": true
+            },
+            {
+              "text": "获得奖励",
+              "minimumConfidence": 0.8,
+              "within": [
+                900,
+                260,
+                600,
+                200
+              ],
+              "contains": true
+            }
+          ]
+        },
+        {
+          "id": "realm-training",
+          "name": "式神育成",
+          "present": [
+            {
+              "template": "page-back",
+              "minimumScore": 0.85,
+              "within": [
+                60,
+                0,
+                240,
+                180
+              ]
+            }
+          ],
+          "text": [
+            {
+              "text": "式神育成",
+              "minimumConfidence": 0.8,
+              "within": [
+                180,
+                20,
+                340,
+                110
+              ],
+              "contains": true
+            },
+            {
+              "text": "式神录",
+              "minimumConfidence": 0.8,
+              "within": [
+                2050,
+                900,
+                180,
+                100
+              ],
+              "contains": true
+            }
+          ],
+          "absentText": [
+            {
+              "text": "进入好友结界寄养式神",
+              "minimumConfidence": 0.8,
+              "within": [
+                1300,
+                140,
+                520,
+                90
+              ],
+              "contains": true
+            },
+            {
+              "text": "确定",
+              "minimumConfidence": 0.8,
+              "within": [
+                1220,
+                770,
+                260,
+                100
+              ],
+              "contains": true
+            }
+          ]
+        }
+      ],
+      "pages": [
+        {
+          "id": "courtyard",
+          "name": "庭院",
+          "state": "courtyard"
+        },
+        {
+          "id": "login",
+          "name": "登录页",
+          "state": "login"
+        },
+        {
+          "id": "explore",
+          "name": "探索地图",
+          "state": "explore",
+          "priority": 10
+        },
+        {
+          "id": "realm-breach",
+          "name": "结界突破",
+          "state": "realm-breach",
+          "priority": 10
+        },
+        {
+          "id": "bounty-list",
+          "name": "悬赏封印",
+          "state": "bounty-list",
+          "priority": 10
+        },
+        {
+          "id": "shop",
+          "name": "商店",
+          "state": "shop",
+          "priority": 10
+        },
+        {
+          "id": "gift-daily",
+          "name": "礼包屋日常",
+          "state": "gift-daily",
+          "priority": 20
+        },
+        {
+          "id": "flower",
+          "name": "花合战",
+          "state": "flower",
+          "priority": 10
+        },
+        {
+          "id": "mail",
+          "name": "邮箱",
+          "state": "mail",
+          "priority": 10
+        },
+        {
+          "id": "friends",
+          "name": "好友",
+          "state": "friends",
+          "priority": 10
+        },
+        {
+          "id": "guild",
+          "name": "阴阳寮",
+          "state": "guild",
+          "priority": 10
+        },
+        {
+          "id": "realm",
+          "name": "结界",
+          "state": "realm",
+          "priority": 10
+        },
+        {
+          "id": "realm-training",
+          "name": "式神育成",
+          "state": "realm-training",
+          "priority": 20
+        }
+      ],
+      "routes": [
+        {
+          "id": "rt-login-courtyard",
+          "from": "login",
+          "to": "courtyard",
+          "use": "nav-login-enter",
+          "cost": 2
+        },
+        {
+          "id": "rt-courtyard-explore",
+          "from": "courtyard",
+          "to": "explore",
+          "use": "nav-courtyard-explore"
+        },
+        {
+          "id": "rt-explore-courtyard",
+          "from": "explore",
+          "to": "courtyard",
+          "use": "nav-explore-back"
+        },
+        {
+          "id": "rt-explore-breach",
+          "from": "explore",
+          "to": "realm-breach",
+          "use": "nav-explore-breach"
+        },
+        {
+          "id": "rt-breach-explore",
+          "from": "realm-breach",
+          "to": "explore",
+          "use": "nav-breach-close"
+        },
+        {
+          "id": "rt-courtyard-bounty",
+          "from": "courtyard",
+          "to": "bounty-list",
+          "use": "nav-courtyard-bounty"
+        },
+        {
+          "id": "rt-bounty-courtyard",
+          "from": "bounty-list",
+          "to": "courtyard",
+          "use": "nav-bounty-close"
+        },
+        {
+          "id": "rt-courtyard-shop",
+          "from": "courtyard",
+          "to": "shop",
+          "use": "nav-courtyard-shop",
+          "cost": 2
+        },
+        {
+          "id": "rt-shop-gift",
+          "from": "shop",
+          "to": "gift-daily",
+          "use": "nav-shop-gift"
+        },
+        {
+          "id": "rt-shop-courtyard",
+          "from": "shop",
+          "to": "courtyard",
+          "use": "nav-home-icon"
+        },
+        {
+          "id": "rt-gift-courtyard",
+          "from": "gift-daily",
+          "to": "courtyard",
+          "use": "nav-home-icon"
+        },
+        {
+          "id": "rt-courtyard-flower",
+          "from": "courtyard",
+          "to": "flower",
+          "use": "nav-courtyard-flower",
+          "cost": 2
+        },
+        {
+          "id": "rt-flower-courtyard",
+          "from": "flower",
+          "to": "courtyard",
+          "use": "nav-flower-back"
+        },
+        {
+          "id": "rt-courtyard-mail",
+          "from": "courtyard",
+          "to": "mail",
+          "use": "nav-courtyard-mail"
+        },
+        {
+          "id": "rt-mail-courtyard",
+          "from": "mail",
+          "to": "courtyard",
+          "use": "nav-mail-close"
+        },
+        {
+          "id": "rt-courtyard-friends",
+          "from": "courtyard",
+          "to": "friends",
+          "use": "nav-courtyard-friends",
+          "cost": 2
+        },
+        {
+          "id": "rt-friends-courtyard",
+          "from": "friends",
+          "to": "courtyard",
+          "use": "nav-friends-close"
+        },
+        {
+          "id": "rt-courtyard-guild",
+          "from": "courtyard",
+          "to": "guild",
+          "use": "nav-courtyard-guild",
+          "cost": 2
+        },
+        {
+          "id": "rt-guild-courtyard",
+          "from": "guild",
+          "to": "courtyard",
+          "use": "nav-guild-back"
+        },
+        {
+          "id": "rt-guild-realm",
+          "from": "guild",
+          "to": "realm",
+          "use": "nav-guild-realm"
+        },
+        {
+          "id": "rt-realm-guild",
+          "from": "realm",
+          "to": "guild",
+          "use": "nav-realm-back"
+        },
+        {
+          "id": "rt-realm-training",
+          "from": "realm",
+          "to": "realm-training",
+          "use": "nav-realm-training"
+        },
+        {
+          "id": "rt-training-realm",
+          "from": "realm-training",
+          "to": "realm",
+          "use": "nav-page-back"
+        }
+      ],
+      "fallbacks": [
+        {
+          "id": "fb-idle",
+          "name": "退出庭院闲置",
+          "use": "fb-tap-idle"
+        },
+        {
+          "id": "fb-lot-paper",
+          "name": "关闭签文右上角",
+          "use": "fb-tap-lot-close"
+        },
+        {
+          "id": "fb-close-blank",
+          "name": "点击空白处关闭",
+          "use": "fb-tap-close-blank"
+        },
+        {
+          "id": "fb-cancel",
+          "name": "点击取消关闭弹窗",
+          "use": "fb-tap-cancel"
+        },
+        {
+          "id": "fb-reward",
+          "name": "关闭获得奖励弹层",
+          "use": "fb-tap-reward-blank"
+        },
+        {
+          "id": "fb-chapter-back",
+          "name": "退出探索章节页",
+          "use": "fb-tap-chapter-back"
+        },
+        {
+          "id": "fb-frame-back",
+          "name": "关闭事务等方框页",
+          "use": "fb-tap-frame-back"
+        },
+        {
+          "id": "fb-page-back",
+          "name": "左上角通用返回",
+          "use": "fb-tap-page-back"
+        }
+      ]
+    }
+  },
+  "visionProfiles": [
+    {
+      "id": "onmyoji",
+      "targetId": "onmyoji",
+      "packageName": "com.netease.onmyoji",
+      "recognizer": "maa.ppocr.v1",
+      "models": {
+        "detector": "det.onnx",
+        "recognizer": "rec.onnx",
+        "dictionary": "keys.txt"
+      }
+    }
+  ],
+  "resources": [
+    {
+      "id": "realm-jar-bubble",
+      "assetName": "realm-jar-bubble.3c199fcd.png",
+      "bytes": 6513,
+      "sha256": "3c199fcd5fcfeba0f59e95e87f0f03ab8f5e4d3800fc837b4abe0b2251cdb2b6",
+      "release": "v1.1.0"
+    },
+    {
+      "id": "page-back",
+      "assetName": "page-back.4e601f2f.png",
+      "bytes": 8761,
+      "sha256": "4e601f2f19f3518950d5c3d5904978cdaf96e36a347408473e4d7ebe89ebdb43",
+      "release": "v1.1.0"
+    },
+    {
+      "id": "realm-food-bubble",
+      "assetName": "realm-food-bubble.5d49743f.png",
+      "bytes": 5926,
+      "sha256": "5d49743fc442db65a1c63d8db48bc09793427fe7cdb669529e4be1c357099aae",
+      "release": "v1.1.0"
+    },
+    {
+      "id": "det.onnx",
+      "assetName": "det.onnx",
+      "bytes": 9893172,
+      "sha256": "66c0f34caaf432553710fd9973a7134d8cf924db7109310c3d2562dcc39b209d",
+      "release": "v1.0.0"
+    },
+    {
+      "id": "rec.onnx",
+      "assetName": "rec.onnx",
+      "bytes": 21146753,
+      "sha256": "7dcf6298d77d2a6eb44c1ebeed990826ca895a9c68d955a3eace00763d052949",
+      "release": "v1.0.0"
+    },
+    {
+      "id": "keys.txt",
+      "assetName": "keys.txt",
+      "bytes": 74947,
+      "sha256": "b5f2bfe2bdd9448429e3e82b51c789775d9b42f2403d082b00662eb77e401c5d",
+      "release": "v1.0.0"
+    },
+    {
+      "id": "jade-icon",
+      "assetName": "jade-icon.191e066d.png",
+      "bytes": 4400,
+      "sha256": "191e066dc0bcb71087628f8370e74ae536bb46786456bbd32dd0a7a54aa3b67d",
+      "release": "v1.1.0"
+    },
+    {
+      "id": "scroll-icon",
+      "assetName": "scroll-icon.4d7bf197.png",
+      "bytes": 23865,
+      "sha256": "4d7bf1979496cc1246072e4db1fb0a956bf9bd3b1d9ba46c6e659efdd9d30c3d",
+      "release": "v1.1.0"
+    },
+    {
+      "id": "daily-lantern",
+      "assetName": "daily-lantern.65d3f445.png",
+      "bytes": 16999,
+      "sha256": "65d3f4453e685632700aff9f25e96037a6e37a2e3b09ebe9c2028ad274a5ac3d",
+      "release": "v1.1.0"
+    },
+    {
+      "id": "home-icon",
+      "assetName": "home-icon.49aad0fc.png",
+      "bytes": 7665,
+      "sha256": "49aad0fcecc5d0b3517d12aca621d759eafaec6755b0e4d737cd6f659d3f75d3",
+      "release": "v1.1.0"
+    },
+    {
+      "id": "claim-all",
+      "assetName": "claim-all.e04b8de2.png",
+      "bytes": 12084,
+      "sha256": "e04b8de24cedfe143d226558ca022b821acc39694c33d28c549d146827ee47ad",
+      "release": "v1.1.0"
+    },
+    {
+      "id": "idle-back",
+      "assetName": "idle-back.b7e53b73.png",
+      "bytes": 3835,
+      "sha256": "b7e53b7360a027c8315c93a6417c75a69eb467b12897a4e9e82510f512f52ece",
+      "release": "v1.1.0"
+    },
+    {
+      "id": "mail-icon",
+      "assetName": "mail-icon.4398d719.png",
+      "bytes": 3525,
+      "sha256": "4398d7199569d513370a9cd96656f453cbfa1799827dc69be60738d4d7ed086b",
+      "release": "v1.1.0"
+    },
+    {
+      "id": "affairs-icon",
+      "assetName": "affairs-icon.c2c5417d.png",
+      "bytes": 4490,
+      "sha256": "c2c5417d327edfc8431ba4240c8bdfc50e08f39f7266738870e7ef1fde9eb2fe",
+      "release": "v1.1.0"
+    },
+    {
+      "id": "foster-plus",
+      "assetName": "foster-plus.a78eb26f.png",
+      "bytes": 6840,
+      "sha256": "a78eb26f0a62cb864ff056f09452c6f5899e2b733ae7de25c4836cd7f515a1d8",
+      "release": "v1.1.0"
+    },
+    {
+      "id": "realm-training",
+      "assetName": "realm-training.fe7cc4be.png",
+      "bytes": 9724,
+      "sha256": "fe7cc4bea74a0448f9dc4a007fb1a297051dfca8ad5fc4bfb68a0618963d115d",
+      "release": "v1.1.0"
+    },
+    {
+      "id": "realm-back",
+      "assetName": "realm-back.8dfa5002.png",
+      "bytes": 11690,
+      "sha256": "8dfa500259697226a7b256b03a31a7f6d703ec7ca5cc9766f061c8a6cbf954a4",
+      "release": "v1.1.0"
+    },
+    {
+      "id": "foster-free",
+      "assetName": "foster-free.11b8f879.png",
+      "bytes": 4926,
+      "sha256": "11b8f879cd75000b00b2f10fa197b4f2cae57047e0f0928cd1b182b799994252",
+      "release": "v1.1.0"
+    },
+    {
+      "id": "daruma-white",
+      "assetName": "daruma-white.b60d6661.png",
+      "bytes": 10773,
+      "sha256": "b60d6661288efb1f9fcc10e9d4c68c01ecfb749ca72b3c95cc1f39c6acb5c742",
+      "release": "v1.1.0"
+    },
+    {
+      "id": "daruma-blue",
+      "assetName": "daruma-blue.0b33daa7.png",
+      "bytes": 12988,
+      "sha256": "0b33daa7e2bffea6c4b0774041ac9046733a7bac0665ae35a63ace3a2af0691f",
+      "release": "v1.1.0"
+    },
+    {
+      "id": "daruma-red",
+      "assetName": "daruma-red.f60fc7e6.png",
+      "bytes": 13264,
+      "sha256": "f60fc7e683ddbc7777b51df945aaeb997917037f61219d556e1564d966fd5532",
+      "release": "v1.1.0"
+    },
+    {
+      "id": "lantern-public",
+      "assetName": "lantern-public.3f33a61d.png",
+      "bytes": 8676,
+      "sha256": "3f33a61de93a043a4647b9cac4dbec07d64a56fc740ae611258c0214a191f281",
+      "release": "v1.1.0"
+    },
+    {
+      "id": "lantern-private",
+      "assetName": "lantern-private.ccd0ef3c.png",
+      "bytes": 8818,
+      "sha256": "ccd0ef3ce7fcd15e43bbc7a7c0fa418da65c71bcb8d8432ca22284bb18a01cf2",
+      "release": "v1.1.0"
+    },
+    {
+      "id": "frame-back",
+      "assetName": "frame-back.93d99334.png",
+      "bytes": 10535,
+      "sha256": "93d993342797626a9c36fdfd6a8036125f783f2ddbf8c76528a3549f4922bad3",
+      "release": "v1.1.0"
+    }
+  ],
+  "taskOrder": [
+    "daily-tour",
+    "flower-chore",
+    "daily-gift",
+    "mail-claim",
+    "friendship-points",
+    "guild-funds",
+    "courtyard-affairs",
+    "shikigami-foster",
+    "realm-breach",
+    "wanted-quests"
+  ],
+  "snippetOrder": [
+    "tap-confirm",
+    "tap-reject",
+    "tap-cancel",
+    "close-new-shikigami",
+    "flower-step",
+    "oneclick-step",
+    "mail-step",
+    "friendship-step",
+    "guild-step",
+    "realm-card-activate",
+    "menu",
+    "close-reward",
+    "flower-claim",
+    "realm-enter",
+    "realm-go",
+    "breach-retreat",
+    "breach-finish",
+    "wq-pick",
+    "wq-challenge",
+    "wq-explore",
+    "bounty-accept",
+    "go-courtyard",
+    "nav-login-enter",
+    "nav-courtyard-explore",
+    "nav-explore-back",
+    "nav-explore-breach",
+    "nav-breach-close",
+    "nav-courtyard-bounty",
+    "nav-bounty-close",
+    "nav-courtyard-shop",
+    "nav-shop-gift",
+    "nav-home-icon",
+    "nav-courtyard-flower",
+    "nav-flower-back",
+    "nav-courtyard-mail",
+    "nav-mail-close",
+    "nav-courtyard-friends",
+    "nav-friends-close",
+    "nav-courtyard-guild",
+    "nav-guild-back",
+    "nav-guild-realm",
+    "nav-realm-back",
+    "nav-realm-training",
+    "nav-page-back",
+    "fb-tap-idle",
+    "fb-tap-close-blank",
+    "fb-tap-cancel",
+    "fb-tap-reward-blank",
+    "fb-tap-lot-close",
+    "fb-tap-frame-back",
+    "fb-tap-page-back",
+    "mail-claim-body",
+    "friendship-claim-body",
+    "gift-claim-body",
+    "wq-list",
+    "wq-claim",
+    "fb-tap-chapter-back"
+  ]
+}
