@@ -288,23 +288,23 @@
           "text": [
             {
               "text": "进入游戏",
-              "minimumConfidence": 0.8,
+              "minimumConfidence": 0.75,
               "within": [
-                1000,
-                840,
-                400,
-                110
+                960,
+                820,
+                480,
+                140
               ],
               "contains": true
             },
             {
-              "text": "公告",
-              "minimumConfidence": 0.8,
+              "text": "用户协议",
+              "minimumConfidence": 0.75,
               "within": [
-                2140,
-                130,
-                180,
-                100
+                1960,
+                0,
+                440,
+                85
               ],
               "contains": true
             }

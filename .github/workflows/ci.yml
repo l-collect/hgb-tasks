@@ -129,7 +129,7 @@ jobs:
           PY
 
           BODY_FILE="$RUNNER_TEMP/release-body.md"
-          printf "%s\n\nmin-app: 0.3.0\n" "$NOTES" > "$BODY_FILE"
+          printf "%s\n\nmin-app: 0.4.0\n" "$NOTES" > "$BODY_FILE"
           gh release create "$TAG" "$OUT_DIR"/* \
             --repo "${GITHUB_REPOSITORY}" \
             --title "$TAG" \
