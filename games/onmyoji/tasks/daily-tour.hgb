@@ -1,0 +1,55 @@
+名称: 日常巡游
+分类: daily
+优先级: 10
+说明: 按勾选顺序依次完成每日礼包、花合战、庭院事务、邮件、友情点与寮资金
+
+设置: [
+  {
+    "id": "flowerChoice",
+    "label": "花札三选一礼盒",
+    "widget": "SINGLE_CHOICE",
+    "required": true,
+    "section": "花合战",
+    "description": "领取花合战奖励遇到三选一礼盒时选哪一项",
+    "recommended": "none",
+    "options": [
+      {
+        "value": "none",
+        "label": "不选，停下来由我处理"
+      },
+      {
+        "value": "soul",
+        "label": "御魂养成"
+      },
+      {
+        "value": "currency",
+        "label": "货币"
+      },
+      {
+        "value": "stamina",
+        "label": "玩法体力"
+      }
+    ]
+  }
+]
+
+=== enter: 前往庭院 ===
+[片段] go-courtyard
+
+=== daily-gift: 每日礼包（商店有红点才去） ===
+[片段] daily-gift-step
+
+=== flower: 花合战（有红点才去） ===
+[片段] flower-step
+
+=== oneclick: 庭院事务一键完成 ===
+[片段] oneclick-step
+
+=== mail: 领取邮件附件 ===
+[片段] mail-step
+
+=== friendship: 收送友情点 ===
+[片段] friendship-step
+
+=== guild: 领取阴阳寮资金 ===
+[片段] guild-step

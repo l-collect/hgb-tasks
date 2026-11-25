@@ -1,0 +1,137 @@
+name: Check & Release Tasks
+
+on:
+  push:
+    branches: [main]
+    tags: ["v*"]
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: ${{ !startsWith(github.ref, 'refs/tags/v') }}
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout task repository
+        uses: actions/checkout@v4
+        with:
+          path: tasks
+          persist-credentials: false
+
+      - name: Checkout engine repository
+        uses: actions/checkout@v4
+        with:
+          repository: lc-cn/hgb
+          ref: master
+          path: engine
+          persist-credentials: false
+
+      - name: Set up JDK 17
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "17"
+
+      - name: Setup Gradle
+        uses: gradle/actions/setup-gradle@v4
+
+      - name: Validate .hgb scripts, page graph, and template SHA-256
+        run: ./engine/gradlew -p engine :core:engine:taskRepo --args="check \"$GITHUB_WORKSPACE/tasks\""
+
+  release:
+    needs: check
+    if: github.event_name == 'push' && startsWith(github.ref, 'refs/tags/v')
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout task repository
+        uses: actions/checkout@v4
+        with:
+          path: tasks
+          fetch-depth: 0
+          persist-credentials: false
+
+      - name: Checkout engine repository
+        uses: actions/checkout@v4
+        with:
+          repository: lc-cn/hgb
+          ref: master
+          path: engine
+          persist-credentials: false
+
+      - name: Set up JDK 17
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "17"
+
+      - name: Setup Gradle
+        uses: gradle/actions/setup-gradle@v4
+
+      - name: Package and publish Release when not already created by workbench
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -euo pipefail
+          TAG="${GITHUB_REF_NAME}"
+
+          # Distinguish HTTP 200 (already published by workbench) from HTTP 404 (tag pushed via git CLI)
+          STATUS=0
+          gh api "repos/${GITHUB_REPOSITORY}/releases/tags/${TAG}" >/dev/null 2>&1 || STATUS=$?
+          if [ "$STATUS" -eq 0 ]; then
+            echo "Release $TAG already exists (published by workbench); skipping duplicate creation."
+            exit 0
+          fi
+          HTTP_CODE="$(gh api -i "repos/${GITHUB_REPOSITORY}/releases/tags/${TAG}" 2>/dev/null | head -n 1 | awk '{print $2}' || true)"
+          if [ -n "$HTTP_CODE" ] && [ "$HTTP_CODE" != "404" ]; then
+            echo "Unexpected GitHub API status ($HTTP_CODE) checking release $TAG" >&2
+            exit 1
+          fi
+
+          # Strip GPG/SSH signatures cleanly via contents:subject + contents:body
+          NOTES="$(git -C tasks for-each-ref --format='%(contents:subject)%0a%0a%(contents:body)' "refs/tags/$TAG" | sed '/^[[:space:]]*min-app:/d')"
+          NOTES="$(printf '%s' "$NOTES" | python3 -c 'import sys; print(sys.stdin.read().strip())')"
+          if [ -z "$NOTES" ]; then
+            NOTES="$(git -C tasks log -1 --pretty=%B "$TAG" | sed '/^[[:space:]]*min-app:/d' | python3 -c 'import sys; print(sys.stdin.read().strip())')"
+          fi
+          [ -n "$NOTES" ] || NOTES="$TAG"
+
+          OUT_DIR="$RUNNER_TEMP/release-assets"
+          NOTES_FILE="$RUNNER_TEMP/changelog.txt"
+          mkdir -p "$OUT_DIR"
+          printf '%s\n' "$NOTES" > "$NOTES_FILE"
+
+          ./engine/gradlew -p engine :core:engine:taskRepo \
+            --args="pack \"$GITHUB_WORKSPACE/tasks\" \"$OUT_DIR/task-bundle.json\" \"$TAG\" --changelog-file \"$NOTES_FILE\""
+
+          # Attach any newly added local template PNGs whose `release` is omitted in game.json
+          python3 - "$GITHUB_WORKSPACE/tasks" "$OUT_DIR" <<'PY'
+          import glob, json, os, shutil, sys
+          tasks_dir, out_dir = sys.argv[1], sys.argv[2]
+          for game_json in glob.glob(os.path.join(tasks_dir, "games", "*", "game.json")):
+              game_dir = os.path.dirname(game_json)
+              with open(game_json, encoding="utf-8") as f:
+                  data = json.load(f)
+              models = {m for vp in data.get("visionProfiles", []) for m in vp.get("models", {}).values()}
+              for r in data.get("resources", []):
+                  if r["id"] in models or r.get("release"):
+                      continue
+                  src = os.path.join(game_dir, "templates", r["assetName"])
+                  if os.path.isfile(src):
+                      shutil.copy2(src, os.path.join(out_dir, r["assetName"]))
+          PY
+
+          BODY_FILE="$RUNNER_TEMP/release-body.md"
+          printf "%s\n\nmin-app: 0.4.0\n" "$NOTES" > "$BODY_FILE"
+          gh release create "$TAG" "$OUT_DIR"/* \
+            --repo "${GITHUB_REPOSITORY}" \
+            --title "$TAG" \
+            --notes-file "$BODY_FILE" \
+            --latest=false
