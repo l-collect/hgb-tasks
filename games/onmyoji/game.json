@@ -2069,7 +2069,7 @@
           "team-farming": {
             "role": "leader",
             "teamMode": "private2",
-            "rounds": "30"
+            "rounds": 30
           }
         }
       },
