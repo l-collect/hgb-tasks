@@ -1993,7 +1993,7 @@
         "latestStartMinutes": 60,
         "taskConfigs": {
           "soul-farming": {
-            "rounds": "30"
+            "rounds": 30
           }
         }
       },
