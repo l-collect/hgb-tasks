@@ -1864,7 +1864,7 @@
     "presetPlans": [
       {
         "id": "wednesday-update-check",
-        "name": "周三维护热更与登录巡检",
+        "name": "周三维护热更巡检",
         "days": [
           3
         ],
@@ -1873,7 +1873,7 @@
           "game-lifecycle",
           "daily-tour"
         ],
-        "description": "专为每周三 08:50 维护开服打造：第一时间自动拉起阴阳师客户端下载解压周三热更补丁、处理自重启与新版本 CG 公告，并顺手完成早间日常福利巡检，防止后续计划被更新卡住",
+        "description": "每周三维护开服后自动拉起阴阳师完成热更下载、自重启与新版本公告关闭，并顺手收齐早间日常福利。",
         "jitterMinutes": 5,
         "latestStartMinutes": 60
       },
@@ -1896,7 +1896,7 @@
           "wanted-quests",
           "realm-breach"
         ],
-        "description": "融合 MaaYYs 一键日常与 assttyys 早间定时：领齐签到/邮件/吉闻/商店福利，续上式神寄养与结界卡，清理早班悬赏封印与阴阳寮/个人结界突破",
+        "description": "每天早上自动领齐签到、邮件、友情点、花合战与商店礼包，续上好友结界寄养，清理早班悬赏封印与结界突破。",
         "jitterMinutes": 10,
         "latestStartMinutes": 60
       },
@@ -1917,7 +1917,7 @@
           "shikigami-foster",
           "duel"
         ],
-        "description": "对应 assttyys 6 小时寄养续卡与 12:00 午间名士斗技场开放窗口，自动补寄养并刷满斗技每日荣誉/周胜场",
+        "description": "衔接 6 小时好友寄养续卡与 12:00 午间斗技开放窗口，自动补寄养并刷满每日斗技荣誉。",
         "jitterMinutes": 10,
         "latestStartMinutes": 45
       },
@@ -1939,7 +1939,7 @@
           "wanted-quests",
           "shikigami-foster"
         ],
-        "description": "对应 assttyys 17:00 逢魔与地鬼日常链条及 18:00 晚间悬赏刷新：一键完成逢魔密信与首领、地域鬼王、寮管理、经验妖怪并衔接晚间悬赏与寄养",
+        "description": "每日傍晚自动完成现世逢魔与密信答题、首领集结、地域鬼王、式神委派，并衔接 18:00 晚间悬赏与寄养续卡。",
         "jitterMinutes": 10,
         "latestStartMinutes": 60
       },
@@ -1959,7 +1959,7 @@
         "tasks": [
           "guild-evening"
         ],
-        "description": "对应 assttyys 19:00 寮活动定时方案：按星期自动进入狩猎战麒麟（周一至四）、阴界之门（周五至日）、道馆突破、狭间暗域、首领退治与寮宴会",
+        "description": "晚间 19:00 自动参与狩猎战麒麟（周一至四）、阴界之门（周五至日）、道馆突破、狭间暗域、首领退治与寮宴会。",
         "jitterMinutes": 5,
         "latestStartMinutes": 30
       },
@@ -1982,13 +1982,13 @@
           "realm-breach",
           "shikigami-foster"
         ],
-        "description": "对应 OAS 与 assttyys 晚间清体力方案：自动刷取御魂/觉醒副本、困28章节探索与妖气宝船，清完积攒的结界突破券并完成睡前式神寄养",
+        "description": "晚间自动刷取御魂或觉醒副本、章节探索与石距年兽，清完积攒的突破券并完成睡前式神寄养。",
         "jitterMinutes": 15,
         "latestStartMinutes": 60
       },
       {
         "id": "weekly-monday-challenges",
-        "name": "周一秘闻真蛇与契灵周常",
+        "name": "周一秘闻真蛇周常",
         "days": [
           1
         ],
@@ -1997,7 +1997,7 @@
           "weekly-challenges",
           "spirit-realm"
         ],
-        "description": "对应 MaaYYs 一键周常与 assttyys 每周一定时任务：一站式通关秘闻竞速/百战、八岐大蛇真蛇、六道之门月之海，并刷取御灵/契灵/英杰试炼周常",
+        "description": "每周一自动通关秘闻副本十层、八岐大蛇·真蛇、六道之门·月之海，并完成御灵、契灵与英杰试炼周常。",
         "jitterMinutes": 15,
         "latestStartMinutes": 90
       },
@@ -2011,13 +2011,13 @@
         "tasks": [
           "weekly-routine"
         ],
-        "description": "对应 OAS 大富翁商店合集与 assttyys 周三资源维护：自动采购杂货铺（黑蛋/蓝票/御灵钥）、寮功勋商店、式神图鉴每周分享领蓝票，并喂食贪吃鬼整理弃置御魂",
+        "description": "每周三自动采购杂货铺黑蛋蓝票、寮功勋商店、式神图鉴每周分享领票，并喂食贪吃鬼整理弃置御魂。",
         "jitterMinutes": 15,
         "latestStartMinutes": 90
       },
       {
         "id": "version-event-farming",
-        "name": "版本活动与对弈竞猜巡检",
+        "name": "版本活动与竞猜巡检",
         "days": [
           1,
           2,
@@ -2031,13 +2031,13 @@
         "tasks": [
           "version-event"
         ],
-        "description": "对应 MaaYYs 通用活动爬塔与 assttyys 每两小时对弈竞猜巡检：大型版本活动期间一键开启，自动完成活动爬塔、超鬼王、对弈竞猜或花合战花车",
+        "description": "大型版本活动期间按需开启，自动完成活动爬塔、超鬼王征伐、对弈竞猜押注与花合战花车。",
         "jitterMinutes": 10,
         "latestStartMinutes": 45
       },
       {
         "id": "coop-team-farming",
-        "name": "多号协同组队刷本（2人/3人同心队寮30）",
+        "name": "多号协同组队刷本",
         "days": [
           1,
           2,
@@ -2051,7 +2051,7 @@
         "tasks": [
           "team-farming"
         ],
-        "description": "大小号 2 人或 3 人协同刷本预设（零浮动准点同步）：主号自动建房并邀请 1～2 位协战小号，同时联动唤醒小号设备高优插队跟车，任一账号刷完或体力耗尽时全队同步收尾",
+        "description": "大小号 2 人或 3 人同心队准点同步：主号建房自动跨设备唤醒协战小号跟车刷满寮30，任一账号刷完同步收尾。",
         "jitterMinutes": 0,
         "latestStartMinutes": 30
       },
@@ -2066,7 +2066,7 @@
         "tasks": [
           "duel"
         ],
-        "description": "对应周六、周日 14:00 开放的协同斗技窗口（零浮动准点同步）：将主号「自动斗技」模式设为“协同斗技”并绑定默认协战小号后，到点自动唤醒大小号双机联动组队上阵",
+        "description": "周六、周日 14:00 准点联动主号与默认协战小号双机匹配组队斗技，自动完成候补式神上阵。",
         "jitterMinutes": 0,
         "latestStartMinutes": 45
       }
