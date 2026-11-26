@@ -1,47 +1,43 @@
-# 护肝宝任务库（纯文本脚本源码仓库）
+# 护肝宝任务库（`l-collect/hgb-tasks` · 公开脚本源码仓库）
 
-这里是 [护肝宝（hgb）](https://github.com/lc-cn/hgb) 的官方任务脚本仓库。所有自动化任务与共享片段均以**多行无转义中文任务脚本（`.hgb`）**的形式直接存放在主干分支中，既可以在网页开发工作台可视化编辑、真机试跑并一键发布，也可以直接用 Git、任意编辑器或 AI 工具克隆修改。
+这里是 **护肝宝（HuGanBao）** 的官方自动化任务脚本公开仓库。所有自动化任务与共享片段均以**多行无转义中文任务脚本（`.hgb`）**的形式直接存放在主干分支中，完全透明可审计——任何玩家都可以直接阅读每一步点击的区域与判断条件，确保绝不触碰勾玉购买、御魂分解或高危确认按钮。
+
+- 安卓客户端安装包下载请前往公开资源下载库：**[`l-collect/hgb`](https://github.com/l-collect/hgb/releases)**
+
+---
+
+## 15 个高内聚任务体系
+
+| 序号 | 脚本文件 | 任务名称 | 涵盖玩法与核心能力 |
+| :---: | :--- | :--- | :--- |
+| 1 | `games/onmyoji/tasks/daily-tour.hgb` | **日常琐事** | 每日礼包、花合战、庭院一键事务、邮件、友情点、寮资金、宠物小屋喂食与后院、寮集体任务30次提交 |
+| 2 | `games/onmyoji/tasks/shikigami-foster.hgb` | **结界养成** | 好友寄养自动挑高收益太阴/太鼓/斗鱼、满级狗粮更换、食盒酒壶结界经验收取、放结界卡 |
+| 3 | `games/onmyoji/tasks/wanted-quests.hgb` | **悬赏封印** | 自动领取已完成悬赏、追踪并前往章节/探索击败目标妖怪、回列表领奖 |
+| 4 | `games/onmyoji/tasks/daily-activities.hgb` | **逢魔与日常活动** | 逢魔之时（现世逢魔 4 次 + **逢魔密信 1,661 题库自动答题** + 领达摩 + 首领集结）、地域鬼王热门挑战、式神委派收获与派发、百鬼夜行撒豆 |
+| 5 | `games/onmyoji/tasks/weekly-routine.hgb` | **每周商店与资源整理** | 杂货铺（荣誉/勋章/魅力买黑蛋蓝票）、寮功勋商店、珍旅居千物宝库、式神图鉴每周分享领蓝票、御魂贪吃鬼喂食与弃置奉纳 |
+| 6 | `games/onmyoji/tasks/realm-breach.hgb` | **结界突破** | 阴阳寮突破（2×2 矢量化网格扫描与翻页）+ 个人结界突破（3×3 九宫格扫描，支持退四打九保级与正常全清） |
+| 7 | `games/onmyoji/tasks/soul-farming.hgb` | **御魂与觉醒刷本** | 八岐大蛇（魂十/悲鸣魂土/神罚魂王）、业原火（贪/嗔/痴）、日轮之陨、永生之海、觉醒材料（火/风/水/雷麒麟） |
+| 8 | `games/onmyoji/tasks/spirit-realm.hgb` | **御灵、契灵与英杰试炼** | 御灵之境（壹～叁层）、契灵之境（自动探查发现契灵与连续结契）、英杰试炼（源赖光鬼兵演武/兵藏秘境/传承试炼） |
+| 9 | `games/onmyoji/tasks/explore-chapter.hgb` | **章节探索与妖气** | 第二十八章（困28）内置自动挑战或手动滑屏、经验妖怪、金币妖怪、年兽、石距宝船 |
+| 10 | `games/onmyoji/tasks/team-farming.hgb` | **组队协战刷本** | 支持 **2人私密队 / 3人全自建队 / 2+1野人混合队**，主号建房自动联动唤醒 1～2 位协战小号跟车并同步收尾 |
+| 11 | `games/onmyoji/tasks/duel.hgb` | **自动斗技** | 支持单人荣誉挂机、正常自动上阵、自动退场刷名仕荣誉，以及 **周末双号协同斗技（自动上阵3式神）** |
+| 12 | `games/onmyoji/tasks/weekly-challenges.hgb` | **每周秘闻、真蛇与六道** | 秘闻副本每周挑战 1～10 层、八岐大蛇·真蛇十层、六道之门·月之海速刷 |
+| 13 | `games/onmyoji/tasks/guild-evening.hgb` | **阴阳寮晚间活动** | 道馆突破、狩猎战麒麟、阴界之门、狭间暗域、首领退治、寮宴会挂机 |
+| 14 | `games/onmyoji/tasks/version-event.hgb` | **版本与限时活动** | 月度版本活动爬塔、对弈竞猜自动押注、花合战巡游花车、超鬼王自动召唤与征伐 |
+| 15 | `games/onmyoji/tasks/game-lifecycle.hgb` | **游戏启动、更新与退出** | 周三维护热更巡检（自动处理下载更新、重新启动弹窗）、登录进庭院、以及安全退回登录界面释放占号 |
+
+---
 
 ## 目录结构
 
 ```text
 games/
   onmyoji/
-    game.json             # 游戏配置、命名区域、取色点组、状态库、页面导航图与资源清单
+    game.json             # 游戏配置、11 套官方预设计划、命名区域、取色点组、页面导航图与资源清单
     tasks/
-      *.hgb               # 每个日常/悬赏任务一个纯文本脚本文件（含任务头与 === 步骤 === 分节）
+      *.hgb               # 15 个高内聚中文任务脚本文件
     snippets/
-      *.hgb               # 可复用的公共动作片段（纯文本任务脚本）
+      *.hgb               # 73 个可复用公共动作片段（含御魂预设切换、切号、退出、战斗循环等）
     templates/
-      *.png               # 裁剪后的纯 UI 图标模板（严禁包含任何玩家昵称或隐私信息）
+      *.png               # 21 张纯 UI 图标模板（不含任何玩家隐私信息）
 ```
-
-> OCR 基础模型文件（`det.onnx`、`rec.onnx`、`keys.txt`）体积较大且长期不变，托管在 `v1.0.0` Release 附件中，由 `game.json` 的 `resources[].release` 按 SHA-256 引用。
-
-## 两种协作与发版工作流
-
-### 方式一：网页开发工作台（推荐用于采样、裁剪与真机单步联调）
-
-1. 打开控制台 `/console/dev`：
-   - 点顶栏 **「从仓库同步」** 即可将本仓库 `main` 分支最新的 `.hgb` 纯文本脚本拉入工作台草稿。
-2. 在线编辑脚本、实时查看行级校验提示，并在连接的 Android 真机上单步或整任务试跑。
-3. 进入 **「校验并发布」** 填写版本号（如 `v1.2.2`）发布：
-   - 服务端会自动将最新 `.hgb` 脚本源码树与模板原子提交回本仓库 `main` 分支，并同步发布包含 `task-bundle.json` 的 GitHub Release。
-
-### 方式二：本地 Git / AI 编辑器直接编写
-
-1. 克隆本仓库与主工程仓库 `lc-cn/hgb`（需 JDK 17）：
-   ```bash
-   git clone https://github.com/lc-cn/hgb-tasks.git
-   git clone https://github.com/lc-cn/hgb.git
-   ```
-2. 直接编辑 `games/onmyoji/tasks/*.hgb` 或 `games/onmyoji/snippets/*.hgb`（语法详见主仓库 `docs/design/task-script.md`）。
-3. 本地运行引擎全量编译与静态校验（含脚本语法、页面图连通性、句柄流向及模板 SHA-256 核对）：
-   ```bash
-   ./hgb/gradlew -p hgb :core:engine:taskRepo --args="check $(pwd)/hgb-tasks"
-   ```
-4. 推送至 `main` 分支（或发起 Pull Request）将自动触发 GitHub Actions 校验；若需从命令行直接发版，打上 `v*` 标签推送即可自动打包发布 Release：
-   ```bash
-   git -C hgb-tasks tag -a v1.2.3 -m "优化某某任务流程"
-   git -C hgb-tasks push origin main v1.2.3
-   ```

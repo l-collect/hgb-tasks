@@ -11,6 +11,14 @@
       {
         "id": "daily",
         "name": "日常"
+      },
+      {
+        "id": "battle",
+        "name": "战斗"
+      },
+      {
+        "id": "guild",
+        "name": "阴阳寮"
       }
     ],
     "library": {
@@ -25,10 +33,10 @@
                 "text": "已断开游戏服务器",
                 "minimumConfidence": 0.8,
                 "within": [
-                  850,
-                  430,
                   700,
-                  120
+                  280,
+                  1000,
+                  280
                 ],
                 "contains": true
               }
@@ -79,10 +87,10 @@
                 "text": "扩展包下载",
                 "minimumConfidence": 0.8,
                 "within": [
-                  850,
-                  280,
                   700,
-                  100
+                  280,
+                  1000,
+                  280
                 ],
                 "contains": true
               }
@@ -92,10 +100,10 @@
                 "text": "阴阳寮",
                 "minimumConfidence": 0.8,
                 "within": [
-                  850,
-                  280,
                   700,
-                  100
+                  280,
+                  1000,
+                  280
                 ],
                 "contains": true
               },
@@ -103,10 +111,10 @@
                 "text": "商店",
                 "minimumConfidence": 0.8,
                 "within": [
-                  850,
-                  280,
                   700,
-                  180
+                  280,
+                  1000,
+                  280
                 ],
                 "contains": true
               }
@@ -133,6 +141,111 @@
             ]
           },
           "use": "close-new-shikigami"
+        },
+        {
+          "id": "soul-overflow",
+          "name": "御魂上限提示",
+          "state": {
+            "id": "soul-overflow",
+            "text": [
+              {
+                "text": "持有御魂过多",
+                "minimumConfidence": 0.8,
+                "within": [
+                  700,
+                  280,
+                  1000,
+                  280
+                ],
+                "contains": true
+              }
+            ]
+          },
+          "use": "close-soul-overflow"
+        },
+        {
+          "id": "soul-conflict-confirm",
+          "name": "御魂更换确认",
+          "state": {
+            "id": "soul-conflict-confirm",
+            "text": [
+              {
+                "text": "即将更换",
+                "minimumConfidence": 0.8,
+                "within": [
+                  700,
+                  280,
+                  1000,
+                  280
+                ],
+                "contains": true
+              }
+            ]
+          },
+          "use": "tap-confirm-right"
+        },
+        {
+          "id": "update-restart",
+          "name": "客户端热更完成重启确认",
+          "state": {
+            "id": "update-restart",
+            "text": [
+              {
+                "text": "重新启动",
+                "minimumConfidence": 0.8,
+                "within": [
+                  700,
+                  280,
+                  1000,
+                  280
+                ],
+                "contains": true
+              }
+            ]
+          },
+          "use": "tap-confirm"
+        },
+        {
+          "id": "client-update-download",
+          "name": "周三热更补丁下载确认",
+          "state": {
+            "id": "client-update-download",
+            "text": [
+              {
+                "text": "下载更新",
+                "minimumConfidence": 0.8,
+                "within": [
+                  700,
+                  280,
+                  1000,
+                  280
+                ],
+                "contains": true
+              }
+            ]
+          },
+          "use": "tap-confirm-right"
+        },
+        {
+          "id": "continue-battle-prompt",
+          "name": "重登后继续上次战斗询问",
+          "state": {
+            "id": "continue-battle-prompt",
+            "text": [
+              {
+                "text": "继续战斗",
+                "minimumConfidence": 0.8,
+                "within": [
+                  700,
+                  280,
+                  1000,
+                  280
+                ],
+                "contains": true
+              }
+            ]
+          },
+          "use": "tap-cancel"
         }
       ],
       "colors": {
@@ -208,13 +321,26 @@
           "40,26#463E34"
         ],
         "章节返回": [
-          "152,15#4B3624",
-          "188,33#EFD590",
-          "170,39#F7EAAD",
-          "166,47#F7EAAC",
-          "182,55#F1DD9C",
-          "198,63#A6703E",
-          "174,71#A06B3C"
+          "152,18#3E281E",
+          "184,18#3E281E",
+          "166,48#FAF0B5",
+          "160,92#D2B27E",
+          "192,92#D5B784"
+        ],
+        "突破卡-5勋章": [
+          "108,0#DACDBD",
+          "0,24#613F21",
+          "125,83#A64E42",
+          "185,83#A64E42",
+          "245,83#A64E42",
+          "305,83#A64E42",
+          "365,83#A64E42"
+        ],
+        "突破-阵容锁": [
+          "0,6#BDAEF2",
+          "53,6#BAB4F4",
+          "18,0#886D4A",
+          "51,10#B6B6FF"
         ]
       },
       "states": [
@@ -288,6 +414,17 @@
                 50,
                 400,
                 110
+              ],
+              "contains": true
+            },
+            {
+              "text": "点击任意位置继续",
+              "minimumConfidence": 0.8,
+              "within": [
+                880,
+                650,
+                640,
+                140
               ],
               "contains": true
             }
@@ -1208,6 +1345,21 @@
           "use": "fb-tap-lot-close"
         },
         {
+          "id": "fb-town-back",
+          "name": "从町中路牌回庭院",
+          "use": "fb-tap-town-back"
+        },
+        {
+          "id": "fb-any-continue",
+          "name": "点击任意位置继续",
+          "use": "fb-tap-any-continue"
+        },
+        {
+          "id": "fb-pet-treasure",
+          "name": "关闭宠物发现宝藏弹层",
+          "use": "fb-tap-pet-treasure"
+        },
+        {
           "id": "fb-close-blank",
           "name": "点击空白处关闭",
           "use": "fb-tap-close-blank"
@@ -1237,8 +1389,688 @@
           "name": "左上角通用返回",
           "use": "fb-tap-page-back"
         }
-      ]
-    }
+      ],
+      "regions": {
+        "探索底栏": [
+          160,
+          960,
+          1650,
+          115
+        ],
+        "底栏觉醒": [
+          172,
+          960,
+          160,
+          115
+        ],
+        "底栏御魂": [
+          315,
+          960,
+          160,
+          115
+        ],
+        "底栏御灵": [
+          602,
+          960,
+          160,
+          115
+        ],
+        "底栏委派": [
+          743,
+          960,
+          160,
+          115
+        ],
+        "底栏秘闻": [
+          888,
+          960,
+          160,
+          115
+        ],
+        "底栏地鬼": [
+          1033,
+          960,
+          160,
+          115
+        ],
+        "底栏英杰": [
+          1317,
+          960,
+          160,
+          115
+        ],
+        "底栏六道": [
+          1462,
+          960,
+          160,
+          115
+        ],
+        "底栏契灵": [
+          1606,
+          960,
+          160,
+          115
+        ],
+        "庭院底栏": [
+          950,
+          960,
+          1250,
+          105
+        ],
+        "庭院图鉴": [
+          242,
+          955,
+          160,
+          100
+        ],
+        "庭院珍旅居": [
+          435,
+          955,
+          160,
+          100
+        ],
+        "庭院纳物库": [
+          629,
+          955,
+          160,
+          100
+        ],
+        "庭院组队": [
+          817,
+          955,
+          160,
+          100
+        ],
+        "庭院阴阳术": [
+          1789,
+          955,
+          160,
+          100
+        ],
+        "庭院式神录": [
+          1981,
+          955,
+          160,
+          100
+        ],
+        "町中灯笼区": [
+          820,
+          200,
+          760,
+          360
+        ],
+        "左上标题": [
+          60,
+          0,
+          460,
+          140
+        ],
+        "顶部居中标题": [
+          880,
+          30,
+          640,
+          150
+        ],
+        "右下挑战区": [
+          1740,
+          740,
+          640,
+          320
+        ],
+        "战斗准备区": [
+          1940,
+          700,
+          440,
+          300
+        ],
+        "战斗左下自动": [
+          0,
+          920,
+          240,
+          160
+        ],
+        "战斗左上退出": [
+          0,
+          0,
+          160,
+          140
+        ],
+        "结算底部继续": [
+          720,
+          900,
+          1660,
+          175
+        ],
+        "获得奖励标题": [
+          800,
+          150,
+          800,
+          320
+        ],
+        "弹窗正文区": [
+          700,
+          300,
+          1000,
+          420
+        ],
+        "弹窗按钮区": [
+          760,
+          540,
+          880,
+          240
+        ],
+        "弹窗确认右侧": [
+          1180,
+          540,
+          460,
+          220
+        ],
+        "突破标题": [
+          1020,
+          75,
+          360,
+          140
+        ],
+        "突破券区": [
+          1900,
+          0,
+          490,
+          100
+        ],
+        "突破刷新区": [
+          1660,
+          750,
+          340,
+          180
+        ],
+        "突破右侧寮签": [
+          2080,
+          280,
+          280,
+          480
+        ],
+        "突破进攻面板": [
+          400,
+          150,
+          1600,
+          900
+        ],
+        "寮突左下次数": [
+          180,
+          780,
+          360,
+          130
+        ],
+        "御魂类型面板": [
+          240,
+          140,
+          1920,
+          800
+        ],
+        "御魂左侧层数": [
+          280,
+          160,
+          540,
+          780
+        ],
+        "御灵左侧层数": [
+          200,
+          180,
+          540,
+          760
+        ],
+        "御灵种类区": [
+          260,
+          180,
+          1880,
+          720
+        ],
+        "地鬼筛选按钮": [
+          2100,
+          50,
+          200,
+          100
+        ],
+        "地鬼右侧页签": [
+          2200,
+          150,
+          180,
+          800
+        ],
+        "地鬼挑战列表": [
+          1720,
+          220,
+          500,
+          800
+        ],
+        "委派任务列表": [
+          1880,
+          160,
+          460,
+          780
+        ],
+        "委派右下按钮": [
+          1740,
+          360,
+          600,
+          640
+        ],
+        "逢魔四次按钮": [
+          1940,
+          760,
+          380,
+          270
+        ],
+        "逢魔集结入口": [
+          40,
+          340,
+          380,
+          460
+        ],
+        "斗技右下战斗": [
+          1920,
+          780,
+          420,
+          260
+        ],
+        "探索章节列表": [
+          1720,
+          160,
+          620,
+          780
+        ],
+        "探索进入按钮": [
+          1440,
+          720,
+          540,
+          260
+        ],
+        "秘闻列表区": [
+          1720,
+          150,
+          620,
+          780
+        ],
+        "秘闻挑战按钮": [
+          1840,
+          780,
+          460,
+          260
+        ],
+        "神社列表区": [
+          240,
+          140,
+          1920,
+          780
+        ],
+        "庭院右侧活动区": [
+          1720,
+          160,
+          640,
+          660
+        ],
+        "宠物快速喂养区": [
+          1400,
+          720,
+          760,
+          340
+        ],
+        "商店底部栏": [
+          800,
+          930,
+          1500,
+          145
+        ],
+        "杂货铺右侧标签": [
+          2000,
+          140,
+          380,
+          820
+        ],
+        "商店商品网格": [
+          360,
+          130,
+          1620,
+          820
+        ],
+        "组队左侧分类": [
+          180,
+          160,
+          380,
+          780
+        ],
+        "组队右下按钮": [
+          1600,
+          820,
+          740,
+          240
+        ],
+        "英杰右侧入口": [
+          1760,
+          380,
+          560,
+          520
+        ],
+        "式神录预设按钮": [
+          540,
+          60,
+          420,
+          160
+        ],
+        "预设底部栏": [
+          1960,
+          910,
+          420,
+          165
+        ],
+        "预设分组列表": [
+          2040,
+          90,
+          340,
+          880
+        ],
+        "预设队伍列表": [
+          1080,
+          180,
+          920,
+          760
+        ],
+        "寮神社": [
+          1640,
+          860,
+          165,
+          210
+        ],
+        "登录进入按钮": [
+          960,
+          820,
+          480,
+          140
+        ],
+        "登录选区按钮": [
+          900,
+          740,
+          600,
+          100
+        ],
+        "登录右侧菜单": [
+          2100,
+          100,
+          290,
+          920
+        ],
+        "用户中心卡片": [
+          400,
+          70,
+          1600,
+          940
+        ],
+        "用户中心切换": [
+          1620,
+          200,
+          340,
+          160
+        ],
+        "设置面板顶部": [
+          920,
+          50,
+          560,
+          120
+        ],
+        "设置左下按钮区": [
+          520,
+          680,
+          480,
+          200
+        ],
+        "逢魔密信标题": [
+          880,
+          50,
+          640,
+          140
+        ],
+        "逢魔密信题目": [
+          880,
+          240,
+          670,
+          155
+        ],
+        "逢魔密信选项一": [
+          875,
+          385,
+          675,
+          115
+        ],
+        "逢魔密信选项二": [
+          875,
+          520,
+          675,
+          115
+        ],
+        "逢魔密信选项三": [
+          875,
+          655,
+          675,
+          115
+        ],
+        "逢魔右侧灯笼区": [
+          2220,
+          280,
+          175,
+          540
+        ]
+      }
+    },
+    "presetPlans": [
+      {
+        "id": "wednesday-update-check",
+        "name": "周三维护热更与登录巡检",
+        "days": [
+          3
+        ],
+        "minuteOfDay": 530,
+        "tasks": [
+          "game-lifecycle",
+          "daily-tour"
+        ],
+        "description": "专为每周三 08:50 维护开服打造：第一时间自动拉起阴阳师客户端下载解压周三热更补丁、处理自重启与新版本 CG 公告，并顺手完成早间日常福利巡检，防止后续计划被更新卡住",
+        "jitterMinutes": 5,
+        "latestStartMinutes": 60
+      },
+      {
+        "id": "morning-routine",
+        "name": "早间日常巡检",
+        "days": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "minuteOfDay": 450,
+        "tasks": [
+          "daily-tour",
+          "shikigami-foster",
+          "wanted-quests",
+          "realm-breach"
+        ],
+        "description": "融合 MaaYYs 一键日常与 assttyys 早间定时：领齐签到/邮件/吉闻/商店福利，续上式神寄养与结界卡，清理早班悬赏封印与阴阳寮/个人结界突破",
+        "jitterMinutes": 10,
+        "latestStartMinutes": 60
+      },
+      {
+        "id": "midday-foster-duel",
+        "name": "午间寄养与斗技",
+        "days": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "minuteOfDay": 735,
+        "tasks": [
+          "shikigami-foster",
+          "duel"
+        ],
+        "description": "对应 assttyys 6 小时寄养续卡与 12:00 午间名士斗技场开放窗口，自动补寄养并刷满斗技每日荣誉/周胜场",
+        "jitterMinutes": 10,
+        "latestStartMinutes": 45
+      },
+      {
+        "id": "evening-demon-daily",
+        "name": "傍晚逢魔与日常活动",
+        "days": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "minuteOfDay": 1050,
+        "tasks": [
+          "daily-activities",
+          "wanted-quests",
+          "shikigami-foster"
+        ],
+        "description": "对应 assttyys 17:00 逢魔与地鬼日常链条及 18:00 晚间悬赏刷新：一键完成逢魔密信与首领、地域鬼王、寮管理、经验妖怪并衔接晚间悬赏与寄养",
+        "jitterMinutes": 10,
+        "latestStartMinutes": 60
+      },
+      {
+        "id": "guild-evening-event",
+        "name": "阴阳寮晚间活动",
+        "days": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "minuteOfDay": 1145,
+        "tasks": [
+          "guild-evening"
+        ],
+        "description": "对应 assttyys 19:00 寮活动定时方案：按星期自动进入狩猎战麒麟（周一至四）、阴界之门（周五至日）、道馆突破、狭间暗域、首领退治与寮宴会",
+        "jitterMinutes": 5,
+        "latestStartMinutes": 30
+      },
+      {
+        "id": "night-farming",
+        "name": "晚间体力刷本与睡前寄养",
+        "days": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "minuteOfDay": 1260,
+        "tasks": [
+          "soul-farming",
+          "explore-chapter",
+          "realm-breach",
+          "shikigami-foster"
+        ],
+        "description": "对应 OAS 与 assttyys 晚间清体力方案：自动刷取御魂/觉醒副本、困28章节探索与妖气宝船，清完积攒的结界突破券并完成睡前式神寄养",
+        "jitterMinutes": 15,
+        "latestStartMinutes": 60
+      },
+      {
+        "id": "weekly-monday-challenges",
+        "name": "周一秘闻真蛇与契灵周常",
+        "days": [
+          1
+        ],
+        "minuteOfDay": 600,
+        "tasks": [
+          "weekly-challenges",
+          "spirit-realm"
+        ],
+        "description": "对应 MaaYYs 一键周常与 assttyys 每周一定时任务：一站式通关秘闻竞速/百战、八岐大蛇真蛇、六道之门月之海，并刷取御灵/契灵/英杰试炼周常",
+        "jitterMinutes": 15,
+        "latestStartMinutes": 90
+      },
+      {
+        "id": "weekly-wednesday-routine",
+        "name": "周三商店采购与御魂整理",
+        "days": [
+          3
+        ],
+        "minuteOfDay": 720,
+        "tasks": [
+          "weekly-routine"
+        ],
+        "description": "对应 OAS 大富翁商店合集与 assttyys 周三资源维护：自动采购杂货铺（黑蛋/蓝票/御灵钥）、寮功勋商店、式神图鉴每周分享领蓝票，并喂食贪吃鬼整理弃置御魂",
+        "jitterMinutes": 15,
+        "latestStartMinutes": 90
+      },
+      {
+        "id": "version-event-farming",
+        "name": "版本活动与对弈竞猜巡检",
+        "days": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "minuteOfDay": 710,
+        "tasks": [
+          "version-event"
+        ],
+        "description": "对应 MaaYYs 通用活动爬塔与 assttyys 每两小时对弈竞猜巡检：大型版本活动期间一键开启，自动完成活动爬塔、超鬼王、对弈竞猜或花合战花车",
+        "jitterMinutes": 10,
+        "latestStartMinutes": 45
+      },
+      {
+        "id": "coop-team-farming",
+        "name": "多号协同组队刷本（2人/3人同心队寮30）",
+        "days": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "minuteOfDay": 1200,
+        "tasks": [
+          "team-farming"
+        ],
+        "description": "大小号 2 人或 3 人协同刷本预设（零浮动准点同步）：主号自动建房并邀请 1～2 位协战小号，同时联动唤醒小号设备高优插队跟车，任一账号刷完或体力耗尽时全队同步收尾",
+        "jitterMinutes": 0,
+        "latestStartMinutes": 30
+      },
+      {
+        "id": "weekend-coop-duel",
+        "name": "周末双号协同斗技",
+        "days": [
+          6,
+          7
+        ],
+        "minuteOfDay": 840,
+        "tasks": [
+          "duel"
+        ],
+        "description": "对应周六、周日 14:00 开放的协同斗技窗口（零浮动准点同步）：将主号「自动斗技」模式设为“协同斗技”并绑定默认协战小号后，到点自动唤醒大小号双机联动组队上阵",
+        "jitterMinutes": 0,
+        "latestStartMinutes": 45
+      }
+    ]
   },
   "visionProfiles": [
     {
@@ -1424,16 +2256,21 @@
     }
   ],
   "taskOrder": [
+    "game-lifecycle",
     "daily-tour",
-    "flower-chore",
-    "daily-gift",
-    "mail-claim",
-    "friendship-points",
-    "guild-funds",
-    "courtyard-affairs",
     "shikigami-foster",
+    "wanted-quests",
+    "daily-activities",
+    "weekly-routine",
     "realm-breach",
-    "wanted-quests"
+    "soul-farming",
+    "spirit-realm",
+    "explore-chapter",
+    "team-farming",
+    "duel",
+    "weekly-challenges",
+    "guild-evening",
+    "version-event"
   ],
   "snippetOrder": [
     "tap-confirm",
@@ -1493,6 +2330,22 @@
     "gift-claim-body",
     "wq-list",
     "wq-claim",
-    "fb-tap-chapter-back"
+    "fb-tap-chapter-back",
+    "fb-tap-town-back",
+    "fb-tap-any-continue",
+    "fb-tap-pet-treasure",
+    "close-soul-overflow",
+    "tap-confirm-right",
+    "exit-to-login",
+    "switch-soul-preset",
+    "enter-town",
+    "enter-duel",
+    "enter-orochi",
+    "enter-goryou",
+    "enter-areaboss",
+    "enter-delegation",
+    "enter-secret",
+    "exit-subpage-courtyard",
+    "battle-auto-loop"
   ]
 }
