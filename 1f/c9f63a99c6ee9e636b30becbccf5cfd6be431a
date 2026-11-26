@@ -1,0 +1,25 @@
+games/onmyoji/game.json
+  s_75c1698e4ed8c2::t_f2fa8e85a336c6 2072
+games/onmyoji/tasks/spirit-realm.hgb
+  s_75c1698e4ed8c2::t_69211adc0e9a8a 178,180-183,186,244-265
+games/onmyoji/tasks/team-farming.hgb
+  s_75c1698e4ed8c2::t_b2db14f54c3314 298,300-303,306,467-480,483-504
+games/onmyoji/tasks/version-event.hgb
+  s_75c1698e4ed8c2::t_beabcafbd1e3d8 166,168-171,174,199-210,212
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "1fc9f63a99c6ee9e636b30becbccf5cfd6be431a",
+  "prompts": {},
+  "sessions": {
+    "s_75c1698e4ed8c2": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "deeba1b2-1cf7-4393-9fbc-f56993a97797",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Class Liu <1659488338@qq.com>"
+    }
+  }
+}
