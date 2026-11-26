@@ -69,3 +69,92 @@ jobs:
         run: |
           git clone --depth 1 "https://x-access-token:${ENGINE_TOKEN}@github.com/l-collect/hgb-private.git" engine
           ./engine/gradlew -p engine :core:engine:taskRepo --args="check "$GITHUB_WORKSPACE/tasks""
+
+  release:
+    needs: check
+    if: github.event_name == 'push' && startsWith(github.ref, 'refs/tags/v')
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout task repository
+        uses: actions/checkout@v4
+        with:
+          path: tasks
+          fetch-depth: 0
+          persist-credentials: false
+
+      - name: Set up JDK 17
+        if: env.ENGINE_TOKEN != ''
+        env:
+          ENGINE_TOKEN: ${{ secrets.HGB_ENGINE_TOKEN }}
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "17"
+
+      - name: Setup Gradle
+        if: env.ENGINE_TOKEN != ''
+        env:
+          ENGINE_TOKEN: ${{ secrets.HGB_ENGINE_TOKEN }}
+        uses: gradle/actions/setup-gradle@v4
+
+      - name: Package and publish Release when not already created by workbench
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          ENGINE_TOKEN: ${{ secrets.HGB_ENGINE_TOKEN }}
+        run: |
+          set -euo pipefail
+          TAG="${GITHUB_REF_NAME}"
+
+          STATUS=0
+          gh api "repos/${GITHUB_REPOSITORY}/releases/tags/${TAG}" >/dev/null 2>&1 || STATUS=$?
+          if [ "$STATUS" -eq 0 ]; then
+            echo "Release $TAG already exists (published by workbench); skipping duplicate creation."
+            exit 0
+          fi
+
+          if [ -z "${ENGINE_TOKEN:-}" ]; then
+            echo "HGB_ENGINE_TOKEN is not set; publish task releases via the Web Workbench (/console/dev) or configure HGB_ENGINE_TOKEN."
+            exit 0
+          fi
+
+          git clone --depth 1 "https://x-access-token:${ENGINE_TOKEN}@github.com/l-collect/hgb-private.git" engine
+
+          NOTES="$(git -C tasks for-each-ref --format='%(contents:subject)%0a%0a%(contents:body)' "refs/tags/$TAG" | sed '/^[[:space:]]*min-app:/d')"
+          NOTES="$(printf '%s' "$NOTES" | python3 -c 'import sys; print(sys.stdin.read().strip())')"
+          if [ -z "$NOTES" ]; then
+            NOTES="$(git -C tasks log -1 --pretty=%B "$TAG" | sed '/^[[:space:]]*min-app:/d' | python3 -c 'import sys; print(sys.stdin.read().strip())')"
+          fi
+          [ -n "$NOTES" ] || NOTES="$TAG"
+
+          OUT_DIR="$RUNNER_TEMP/release-assets"
+          NOTES_FILE="$RUNNER_TEMP/changelog.txt"
+          mkdir -p "$OUT_DIR"
+          printf '%s
+' "$NOTES" > "$NOTES_FILE"
+
+          ./engine/gradlew -p engine :core:engine:taskRepo             --args="pack "$GITHUB_WORKSPACE/tasks" "$OUT_DIR/task-bundle.json" "$TAG" --changelog-file "$NOTES_FILE""
+
+          python3 - "$GITHUB_WORKSPACE/tasks" "$OUT_DIR" <<'PY'
+          import glob, json, os, shutil, sys
+          tasks_dir, out_dir = sys.argv[1], sys.argv[2]
+          for game_json in glob.glob(os.path.join(tasks_dir, "games", "*", "game.json")):
+              game_dir = os.path.dirname(game_json)
+              with open(game_json, encoding="utf-8") as f:
+                  data = json.load(f)
+              models = {m for vp in data.get("visionProfiles", []) for m in vp.get("models", {}).values()}
+              for r in data.get("resources", []):
+                  if r["id"] in models or r.get("release"):
+                      continue
+                  src = os.path.join(game_dir, "templates", r["assetName"])
+                  if os.path.isfile(src):
+                      shutil.copy2(src, os.path.join(out_dir, r["assetName"]))
+          PY
+
+          BODY_FILE="$RUNNER_TEMP/release-body.md"
+          printf "%s
+
+min-app: 0.4.0
+" "$NOTES" > "$BODY_FILE"
+          gh release create "$TAG" "$OUT_DIR"/*             --repo "${GITHUB_REPOSITORY}"             --title "$TAG"             --notes-file "$BODY_FILE"
