@@ -10,7 +10,8 @@
     "widget": "SWITCH",
     "section": "庭院日常",
     "description": "当底部商店图标有红点时前往礼包屋日常页领取免费礼包",
-    "recommended": true
+    "recommended": true,
+    "stepId": "daily-gift"
   },
   {
     "id": "doFlower",
@@ -18,7 +19,8 @@
     "widget": "SWITCH",
     "section": "庭院日常",
     "description": "当花合战图标有红点时前往任务页与奖励页一键领取",
-    "recommended": true
+    "recommended": true,
+    "stepId": "flower"
   },
   {
     "id": "flowerChoice",
@@ -29,11 +31,24 @@
     "description": "领取花合战奖励遇到三选一礼盒时选哪一项",
     "recommended": "none",
     "options": [
-      {"value": "none", "label": "不选，停下来由我处理"},
-      {"value": "soul", "label": "御魂养成"},
-      {"value": "currency", "label": "货币"},
-      {"value": "stamina", "label": "玩法体力"}
-    ]
+      {
+        "value": "none",
+        "label": "不选，停下来由我处理"
+      },
+      {
+        "value": "soul",
+        "label": "御魂养成"
+      },
+      {
+        "value": "currency",
+        "label": "货币"
+      },
+      {
+        "value": "stamina",
+        "label": "玩法体力"
+      }
+    ],
+    "stepId": "flower"
   },
   {
     "id": "doOneclick",
@@ -41,7 +56,8 @@
     "widget": "SWITCH",
     "section": "庭院日常",
     "description": "点击庭院小纸人头顶事务图标一键完成日常并解签",
-    "recommended": true
+    "recommended": true,
+    "stepId": "oneclick"
   },
   {
     "id": "doMail",
@@ -49,7 +65,8 @@
     "widget": "SWITCH",
     "section": "庭院日常",
     "description": "前往庭院右上角邮箱一键领取全部邮件奖励",
-    "recommended": true
+    "recommended": true,
+    "stepId": "mail"
   },
   {
     "id": "doFriendship",
@@ -57,7 +74,8 @@
     "widget": "SWITCH",
     "section": "庭院日常",
     "description": "前往好友列表一键收取与赠送友情点",
-    "recommended": true
+    "recommended": true,
+    "stepId": "friendship"
   },
   {
     "id": "doPets",
@@ -65,7 +83,8 @@
     "widget": "SWITCH",
     "section": "宠物与寮日常",
     "description": "从庭院进入宠物小屋执行“快速喂养”领协战御魂，并在宠物后院放置排骨/鲜鱼食材",
-    "recommended": true
+    "recommended": true,
+    "stepId": "pets-feed"
   },
   {
     "id": "doGuildFunds",
@@ -73,7 +92,8 @@
     "widget": "SWITCH",
     "section": "宠物与寮日常",
     "description": "前往阴阳寮信息页领取每日寮资金补给",
-    "recommended": true
+    "recommended": true,
+    "stepId": "guild"
   },
   {
     "id": "doGuildMissions",
@@ -81,7 +101,8 @@
     "widget": "SWITCH",
     "section": "宠物与寮日常",
     "description": "前往阴阳寮神社→集体任务，自动检测并提交觉醒/御灵材料完成每日 30 次寮任务",
-    "recommended": false
+    "recommended": false,
+    "stepId": "guild-missions"
   }
 ]
 

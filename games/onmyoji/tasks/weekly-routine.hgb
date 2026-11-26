@@ -10,7 +10,8 @@
     "widget": "SWITCH",
     "section": "每周商店采购",
     "description": "前往商店→杂货铺，依次在特殊、荣誉、勋章、魅力页签兑换御行达摩、神秘的符咒与御灵境之钥",
-    "recommended": true
+    "recommended": true,
+    "stepId": "mall-weekly"
   },
   {
     "id": "buyGuildShop",
@@ -18,7 +19,8 @@
     "widget": "SWITCH",
     "section": "每周商店采购",
     "description": "前往阴阳寮→神社→功勋商店，自动购买每周限购的高价值物资",
-    "recommended": true
+    "recommended": true,
+    "stepId": "guild-shop"
   },
   {
     "id": "buyTravelShop",
@@ -26,7 +28,8 @@
     "widget": "SWITCH",
     "section": "每周商店采购",
     "description": "前往珍旅居→千物宝库兑换每周神秘的符咒与达摩物资",
-    "recommended": false
+    "recommended": false,
+    "stepId": "travel-shop"
   },
   {
     "id": "shareCollection",
@@ -34,7 +37,8 @@
     "widget": "SWITCH",
     "section": "每周福利与整理",
     "description": "前往图鉴→式神图鉴点击分享按钮，免费获取每周 1 张蓝票",
-    "recommended": true
+    "recommended": true,
+    "stepId": "share-collection"
   },
   {
     "id": "tidySouls",
@@ -42,7 +46,8 @@
     "widget": "SWITCH",
     "section": "每周福利与整理",
     "description": "前往式神录→御魂→更换→整理，喂食贪吃鬼清理低星御魂并奉纳已弃置御魂换取金币与吉运达摩",
-    "recommended": true
+    "recommended": true,
+    "stepId": "tidy-souls"
   },
   {
     "id": "returnHome",
@@ -50,7 +55,8 @@
     "widget": "SWITCH",
     "section": "收尾",
     "description": "采购与整理完成后自动回到庭院",
-    "recommended": true
+    "recommended": true,
+    "stepId": "return-courtyard"
   }
 ]
 

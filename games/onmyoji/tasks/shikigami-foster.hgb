@@ -25,7 +25,8 @@
         "value": "exp",
         "label": "经验优先（伞室内）"
       }
-    ]
+    ],
+    "stepId": "foster"
   },
   {
     "id": "collectRealm",
@@ -33,7 +34,8 @@
     "widget": "SWITCH",
     "description": "领自己结界里攒的经验和体力",
     "recommended": true,
-    "section": "寄养"
+    "section": "寄养",
+    "stepId": "realm-rewards"
   },
   {
     "id": "replaceMaxed",
@@ -41,7 +43,8 @@
     "widget": "SWITCH",
     "description": "把自己结界育成位上的满级式神换成 1 级白达摩",
     "recommended": true,
-    "section": "寄养"
+    "section": "寄养",
+    "stepId": "replace-maxed"
   },
   {
     "id": "placeCard",
@@ -49,7 +52,8 @@
     "widget": "SWITCH",
     "description": "自己结界里没有生效的卡时放一张",
     "recommended": true,
-    "section": "结界卡"
+    "section": "结界卡",
+    "stepId": "place-card"
   },
   {
     "id": "cardKind",
@@ -72,7 +76,8 @@
         "value": "exp",
         "label": "伞室内"
       }
-    ]
+    ],
+    "stepId": "place-card"
   },
   {
     "id": "publicSpots",
@@ -99,7 +104,8 @@
         "value": "none",
         "label": "都不公开"
       }
-    ]
+    ],
+    "stepId": "place-card"
   }
 ]
 

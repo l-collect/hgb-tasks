@@ -13,36 +13,124 @@
     "description": "开战前自动前往庭院式神录→预设面板，一键装配指定分组与队伍的御魂预设",
     "recommended": "none",
     "options": [
-      {"value": "none", "label": "不切换（保持当前身上御魂）"},
-      {"value": "1-1", "label": "分组 1 · 队伍 1"},
-      {"value": "1-2", "label": "分组 1 · 队伍 2"},
-      {"value": "1-3", "label": "分组 1 · 队伍 3"},
-      {"value": "1-4", "label": "分组 1 · 队伍 4"},
-      {"value": "2-1", "label": "分组 2 · 队伍 1"},
-      {"value": "2-2", "label": "分组 2 · 队伍 2"},
-      {"value": "2-3", "label": "分组 2 · 队伍 3"},
-      {"value": "2-4", "label": "分组 2 · 队伍 4"},
-      {"value": "3-1", "label": "分组 3 · 队伍 1"},
-      {"value": "3-2", "label": "分组 3 · 队伍 2"},
-      {"value": "3-3", "label": "分组 3 · 队伍 3"},
-      {"value": "3-4", "label": "分组 3 · 队伍 4"},
-      {"value": "4-1", "label": "分组 4 · 队伍 1"},
-      {"value": "4-2", "label": "分组 4 · 队伍 2"},
-      {"value": "4-3", "label": "分组 4 · 队伍 3"},
-      {"value": "4-4", "label": "分组 4 · 队伍 4"},
-      {"value": "5-1", "label": "分组 5 · 队伍 1"},
-      {"value": "5-2", "label": "分组 5 · 队伍 2"},
-      {"value": "5-3", "label": "分组 5 · 队伍 3"},
-      {"value": "5-4", "label": "分组 5 · 队伍 4"},
-      {"value": "6-1", "label": "分组 6 · 队伍 1"},
-      {"value": "6-2", "label": "分组 6 · 队伍 2"},
-      {"value": "6-3", "label": "分组 6 · 队伍 3"},
-      {"value": "6-4", "label": "分组 6 · 队伍 4"},
-      {"value": "7-1", "label": "分组 7 · 队伍 1"},
-      {"value": "7-2", "label": "分组 7 · 队伍 2"},
-      {"value": "7-3", "label": "分组 7 · 队伍 3"},
-      {"value": "7-4", "label": "分组 7 · 队伍 4"}
-    ]
+      {
+        "value": "none",
+        "label": "不切换（保持当前身上御魂）"
+      },
+      {
+        "value": "1-1",
+        "label": "分组 1 · 队伍 1"
+      },
+      {
+        "value": "1-2",
+        "label": "分组 1 · 队伍 2"
+      },
+      {
+        "value": "1-3",
+        "label": "分组 1 · 队伍 3"
+      },
+      {
+        "value": "1-4",
+        "label": "分组 1 · 队伍 4"
+      },
+      {
+        "value": "2-1",
+        "label": "分组 2 · 队伍 1"
+      },
+      {
+        "value": "2-2",
+        "label": "分组 2 · 队伍 2"
+      },
+      {
+        "value": "2-3",
+        "label": "分组 2 · 队伍 3"
+      },
+      {
+        "value": "2-4",
+        "label": "分组 2 · 队伍 4"
+      },
+      {
+        "value": "3-1",
+        "label": "分组 3 · 队伍 1"
+      },
+      {
+        "value": "3-2",
+        "label": "分组 3 · 队伍 2"
+      },
+      {
+        "value": "3-3",
+        "label": "分组 3 · 队伍 3"
+      },
+      {
+        "value": "3-4",
+        "label": "分组 3 · 队伍 4"
+      },
+      {
+        "value": "4-1",
+        "label": "分组 4 · 队伍 1"
+      },
+      {
+        "value": "4-2",
+        "label": "分组 4 · 队伍 2"
+      },
+      {
+        "value": "4-3",
+        "label": "分组 4 · 队伍 3"
+      },
+      {
+        "value": "4-4",
+        "label": "分组 4 · 队伍 4"
+      },
+      {
+        "value": "5-1",
+        "label": "分组 5 · 队伍 1"
+      },
+      {
+        "value": "5-2",
+        "label": "分组 5 · 队伍 2"
+      },
+      {
+        "value": "5-3",
+        "label": "分组 5 · 队伍 3"
+      },
+      {
+        "value": "5-4",
+        "label": "分组 5 · 队伍 4"
+      },
+      {
+        "value": "6-1",
+        "label": "分组 6 · 队伍 1"
+      },
+      {
+        "value": "6-2",
+        "label": "分组 6 · 队伍 2"
+      },
+      {
+        "value": "6-3",
+        "label": "分组 6 · 队伍 3"
+      },
+      {
+        "value": "6-4",
+        "label": "分组 6 · 队伍 4"
+      },
+      {
+        "value": "7-1",
+        "label": "分组 7 · 队伍 1"
+      },
+      {
+        "value": "7-2",
+        "label": "分组 7 · 队伍 2"
+      },
+      {
+        "value": "7-3",
+        "label": "分组 7 · 队伍 3"
+      },
+      {
+        "value": "7-4",
+        "label": "分组 7 · 队伍 4"
+      }
+    ],
+    "stepId": "switch-soul"
   },
   {
     "id": "doGuildBreach",
@@ -50,7 +138,8 @@
     "widget": "SWITCH",
     "section": "阴阳寮突破",
     "description": "开启后先切换至右侧“阴阳寮”页签清完可用的寮突破次数，再切回个人突破",
-    "recommended": true
+    "recommended": true,
+    "stepId": "guild-breach"
   },
   {
     "id": "guildScroll",
@@ -58,7 +147,8 @@
     "widget": "SWITCH",
     "section": "阴阳寮突破",
     "description": "当视野内 4 张寮结界卡均已攻破时自动上滑寻找下一屏目标",
-    "recommended": true
+    "recommended": true,
+    "stepId": "guild-breach"
   },
   {
     "id": "doPersonalBreach",
@@ -66,7 +156,8 @@
     "widget": "SWITCH",
     "section": "个人突破",
     "description": "使用 3×3 九宫格矢量化扫描攻打个人结界突破，直到突破券用完",
-    "recommended": true
+    "recommended": true,
+    "stepId": "personal-breach"
   },
   {
     "id": "strategy",
@@ -77,9 +168,16 @@
     "description": "退四打九在第 9 张卡先退出认输 4 次再真打，拿满 3/6/9 奖励的同时压低突破等级",
     "recommended": "retreat4",
     "options": [
-      {"value": "retreat4", "label": "退四打九（第 9 格先认输 4 次再打）"},
-      {"value": "clearAll", "label": "正常全清（9 格全部直接打完）"}
-    ]
+      {
+        "value": "retreat4",
+        "label": "退四打九（第 9 格先认输 4 次再打）"
+      },
+      {
+        "value": "clearAll",
+        "label": "正常全清（9 格全部直接打完）"
+      }
+    ],
+    "stepId": "personal-breach"
   },
   {
     "id": "autoRefresh",
@@ -87,7 +185,8 @@
     "widget": "SWITCH",
     "section": "个人突破",
     "description": "当前页已无未破结界且刷新按钮可用时自动点刷新",
-    "recommended": true
+    "recommended": true,
+    "stepId": "personal-breach"
   },
   {
     "id": "returnHome",
@@ -95,7 +194,8 @@
     "widget": "SWITCH",
     "section": "收尾",
     "description": "突破结束后自动关闭突破页并退回庭院",
-    "recommended": true
+    "recommended": true,
+    "stepId": "return-courtyard"
   }
 ]
 

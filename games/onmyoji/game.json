@@ -1919,7 +1919,13 @@
         ],
         "description": "衔接 6 小时好友寄养续卡与 12:00 午间斗技开放窗口，自动补寄养并刷满每日斗技荣誉。",
         "jitterMinutes": 10,
-        "latestStartMinutes": 45
+        "latestStartMinutes": 45,
+        "taskConfigs": {
+          "duel": {
+            "duelMode": "fight",
+            "bouts": "5"
+          }
+        }
       },
       {
         "id": "evening-demon-daily",
@@ -1984,7 +1990,12 @@
         ],
         "description": "晚间自动刷取御魂或觉醒副本、章节探索与石距年兽，清完积攒的突破券并完成睡前式神寄养。",
         "jitterMinutes": 15,
-        "latestStartMinutes": 60
+        "latestStartMinutes": 60,
+        "taskConfigs": {
+          "soul-farming": {
+            "rounds": "30"
+          }
+        }
       },
       {
         "id": "weekly-monday-challenges",
@@ -2053,7 +2064,14 @@
         ],
         "description": "大小号 2 人或 3 人同心队准点同步：主号建房自动跨设备唤醒协战小号跟车刷满寮30，任一账号刷完同步收尾。",
         "jitterMinutes": 0,
-        "latestStartMinutes": 30
+        "latestStartMinutes": 30,
+        "taskConfigs": {
+          "team-farming": {
+            "role": "leader",
+            "teamMode": "private2",
+            "rounds": "30"
+          }
+        }
       },
       {
         "id": "weekend-coop-duel",
@@ -2068,7 +2086,14 @@
         ],
         "description": "周六、周日 14:00 准点联动主号与默认协战小号双机匹配组队斗技，自动完成候补式神上阵。",
         "jitterMinutes": 0,
-        "latestStartMinutes": 45
+        "latestStartMinutes": 45,
+        "taskConfigs": {
+          "duel": {
+            "duelMode": "coop",
+            "coopRole": "leader",
+            "bouts": "10"
+          }
+        }
       }
     ]
   },

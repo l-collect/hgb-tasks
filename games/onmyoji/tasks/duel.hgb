@@ -13,36 +13,124 @@
     "description": "开战前自动前往庭院式神录→预设面板，一键装配指定分组与队伍的御魂预设",
     "recommended": "none",
     "options": [
-      {"value": "none", "label": "不切换（保持当前身上御魂）"},
-      {"value": "1-1", "label": "分组 1 · 队伍 1"},
-      {"value": "1-2", "label": "分组 1 · 队伍 2"},
-      {"value": "1-3", "label": "分组 1 · 队伍 3"},
-      {"value": "1-4", "label": "分组 1 · 队伍 4"},
-      {"value": "2-1", "label": "分组 2 · 队伍 1"},
-      {"value": "2-2", "label": "分组 2 · 队伍 2"},
-      {"value": "2-3", "label": "分组 2 · 队伍 3"},
-      {"value": "2-4", "label": "分组 2 · 队伍 4"},
-      {"value": "3-1", "label": "分组 3 · 队伍 1"},
-      {"value": "3-2", "label": "分组 3 · 队伍 2"},
-      {"value": "3-3", "label": "分组 3 · 队伍 3"},
-      {"value": "3-4", "label": "分组 3 · 队伍 4"},
-      {"value": "4-1", "label": "分组 4 · 队伍 1"},
-      {"value": "4-2", "label": "分组 4 · 队伍 2"},
-      {"value": "4-3", "label": "分组 4 · 队伍 3"},
-      {"value": "4-4", "label": "分组 4 · 队伍 4"},
-      {"value": "5-1", "label": "分组 5 · 队伍 1"},
-      {"value": "5-2", "label": "分组 5 · 队伍 2"},
-      {"value": "5-3", "label": "分组 5 · 队伍 3"},
-      {"value": "5-4", "label": "分组 5 · 队伍 4"},
-      {"value": "6-1", "label": "分组 6 · 队伍 1"},
-      {"value": "6-2", "label": "分组 6 · 队伍 2"},
-      {"value": "6-3", "label": "分组 6 · 队伍 3"},
-      {"value": "6-4", "label": "分组 6 · 队伍 4"},
-      {"value": "7-1", "label": "分组 7 · 队伍 1"},
-      {"value": "7-2", "label": "分组 7 · 队伍 2"},
-      {"value": "7-3", "label": "分组 7 · 队伍 3"},
-      {"value": "7-4", "label": "分组 7 · 队伍 4"}
-    ]
+      {
+        "value": "none",
+        "label": "不切换（保持当前身上御魂）"
+      },
+      {
+        "value": "1-1",
+        "label": "分组 1 · 队伍 1"
+      },
+      {
+        "value": "1-2",
+        "label": "分组 1 · 队伍 2"
+      },
+      {
+        "value": "1-3",
+        "label": "分组 1 · 队伍 3"
+      },
+      {
+        "value": "1-4",
+        "label": "分组 1 · 队伍 4"
+      },
+      {
+        "value": "2-1",
+        "label": "分组 2 · 队伍 1"
+      },
+      {
+        "value": "2-2",
+        "label": "分组 2 · 队伍 2"
+      },
+      {
+        "value": "2-3",
+        "label": "分组 2 · 队伍 3"
+      },
+      {
+        "value": "2-4",
+        "label": "分组 2 · 队伍 4"
+      },
+      {
+        "value": "3-1",
+        "label": "分组 3 · 队伍 1"
+      },
+      {
+        "value": "3-2",
+        "label": "分组 3 · 队伍 2"
+      },
+      {
+        "value": "3-3",
+        "label": "分组 3 · 队伍 3"
+      },
+      {
+        "value": "3-4",
+        "label": "分组 3 · 队伍 4"
+      },
+      {
+        "value": "4-1",
+        "label": "分组 4 · 队伍 1"
+      },
+      {
+        "value": "4-2",
+        "label": "分组 4 · 队伍 2"
+      },
+      {
+        "value": "4-3",
+        "label": "分组 4 · 队伍 3"
+      },
+      {
+        "value": "4-4",
+        "label": "分组 4 · 队伍 4"
+      },
+      {
+        "value": "5-1",
+        "label": "分组 5 · 队伍 1"
+      },
+      {
+        "value": "5-2",
+        "label": "分组 5 · 队伍 2"
+      },
+      {
+        "value": "5-3",
+        "label": "分组 5 · 队伍 3"
+      },
+      {
+        "value": "5-4",
+        "label": "分组 5 · 队伍 4"
+      },
+      {
+        "value": "6-1",
+        "label": "分组 6 · 队伍 1"
+      },
+      {
+        "value": "6-2",
+        "label": "分组 6 · 队伍 2"
+      },
+      {
+        "value": "6-3",
+        "label": "分组 6 · 队伍 3"
+      },
+      {
+        "value": "6-4",
+        "label": "分组 6 · 队伍 4"
+      },
+      {
+        "value": "7-1",
+        "label": "分组 7 · 队伍 1"
+      },
+      {
+        "value": "7-2",
+        "label": "分组 7 · 队伍 2"
+      },
+      {
+        "value": "7-3",
+        "label": "分组 7 · 队伍 3"
+      },
+      {
+        "value": "7-4",
+        "label": "分组 7 · 队伍 4"
+      }
+    ],
+    "stepId": "switch-soul"
   },
   {
     "id": "duelMode",
@@ -53,10 +141,20 @@
     "description": "正常自动作战适合日常冲分与首胜；退场刷荣誉适合快速拿满周荣誉；协同斗技适合周六/周日 14:00-23:00 大小号双人组队",
     "recommended": "fight",
     "options": [
-      {"value": "fight", "label": "单人斗技 · 正常自动上阵作战（推荐）"},
-      {"value": "concede", "label": "单人斗技 · 进入准备后自动退出刷荣誉（拔菜）"},
-      {"value": "coop", "label": "协同斗技 · 双人组队作战（周六/周日 14:00-23:00）"}
-    ]
+      {
+        "value": "fight",
+        "label": "单人斗技 · 正常自动上阵作战（推荐）"
+      },
+      {
+        "value": "concede",
+        "label": "单人斗技 · 进入准备后自动退出刷荣誉（拔菜）"
+      },
+      {
+        "value": "coop",
+        "label": "协同斗技 · 双人组队作战（周六/周日 14:00-23:00）"
+      }
+    ],
+    "stepId": "enter-duel"
   },
   {
     "id": "coopRole",
@@ -66,11 +164,21 @@
     "section": "协同斗技设置",
     "description": "主号选队长（自动建队邀小号并联动唤醒小号设备）；小号被唤醒时自动以队员身份在庭院接邀请",
     "recommended": "leader",
-    "visibleWhen": {"field": "duelMode", "contains": "coop"},
+    "visibleWhen": {
+      "field": "duelMode",
+      "contains": "coop"
+    },
     "options": [
-      {"value": "leader", "label": "队长 · 主号（进入协同斗技建队 + 邀请协战小号 + 发起匹配）"},
-      {"value": "member", "label": "队员 · 次号（在庭院接协同邀请 + 配合上阵准备）"}
-    ]
+      {
+        "value": "leader",
+        "label": "队长 · 主号（进入协同斗技建队 + 邀请协战小号 + 发起匹配）"
+      },
+      {
+        "value": "member",
+        "label": "队员 · 次号（在庭院接协同邀请 + 配合上阵准备）"
+      }
+    ],
+    "stepId": "enter-duel"
   },
   {
     "id": "coopLineup",
@@ -80,11 +188,21 @@
     "section": "协同斗技设置",
     "description": "支持锁定固定阵容直接准备，或从底部候补式神列表自动依次点选前 3 名式神上阵",
     "recommended": "autoLock",
-    "visibleWhen": {"field": "duelMode", "contains": "coop"},
+    "visibleWhen": {
+      "field": "duelMode",
+      "contains": "coop"
+    },
     "options": [
-      {"value": "autoLock", "label": "锁定固定阵容 / 自动上阵直接点准备（省心速刷）"},
-      {"value": "pickThree", "label": "按底部候补式神列表自动依次点选前 3 名式神上阵并准备"}
-    ]
+      {
+        "value": "autoLock",
+        "label": "锁定固定阵容 / 自动上阵直接点准备（省心速刷）"
+      },
+      {
+        "value": "pickThree",
+        "label": "按底部候补式神列表自动依次点选前 3 名式神上阵并准备"
+      }
+    ],
+    "stepId": "auto-duel-loop"
   },
   {
     "id": "partnerAccount",
@@ -92,7 +210,11 @@
     "widget": "TEXT",
     "section": "协同斗技设置",
     "description": "可按需覆盖填写协战小号名称、游戏昵称或编号；留空则使用账号详情页绑定的 1 号默认协战搭子",
-    "visibleWhen": {"field": "duelMode", "contains": "coop"}
+    "visibleWhen": {
+      "field": "duelMode",
+      "contains": "coop"
+    },
+    "stepId": "enter-duel"
   },
   {
     "id": "bouts",
@@ -103,10 +225,20 @@
     "description": "单次任务连续匹配多少场斗技或协同斗技",
     "recommended": "5",
     "options": [
-      {"value": "3", "label": "3 场（每日首胜速刷）"},
-      {"value": "5", "label": "5 场（推荐）"},
-      {"value": "10", "label": "10 场（刷满周荣誉 / 协同周奖励）"}
-    ]
+      {
+        "value": "3",
+        "label": "3 场（每日首胜速刷）"
+      },
+      {
+        "value": "5",
+        "label": "5 场（推荐）"
+      },
+      {
+        "value": "10",
+        "label": "10 场（刷满周荣誉 / 协同周奖励）"
+      }
+    ],
+    "stepId": "auto-duel-loop"
   },
   {
     "id": "returnHome",
@@ -114,7 +246,8 @@
     "widget": "SWITCH",
     "section": "收尾",
     "description": "斗技结束后自动经町中返回庭院",
-    "recommended": true
+    "recommended": true,
+    "stepId": "return-courtyard"
   }
 ]
 

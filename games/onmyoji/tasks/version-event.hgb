@@ -13,36 +13,124 @@
     "description": "开战前自动前往庭院式神录→预设面板，一键装配指定分组与队伍的御魂预设",
     "recommended": "none",
     "options": [
-      {"value": "none", "label": "不切换（保持当前身上御魂）"},
-      {"value": "1-1", "label": "分组 1 · 队伍 1"},
-      {"value": "1-2", "label": "分组 1 · 队伍 2"},
-      {"value": "1-3", "label": "分组 1 · 队伍 3"},
-      {"value": "1-4", "label": "分组 1 · 队伍 4"},
-      {"value": "2-1", "label": "分组 2 · 队伍 1"},
-      {"value": "2-2", "label": "分组 2 · 队伍 2"},
-      {"value": "2-3", "label": "分组 2 · 队伍 3"},
-      {"value": "2-4", "label": "分组 2 · 队伍 4"},
-      {"value": "3-1", "label": "分组 3 · 队伍 1"},
-      {"value": "3-2", "label": "分组 3 · 队伍 2"},
-      {"value": "3-3", "label": "分组 3 · 队伍 3"},
-      {"value": "3-4", "label": "分组 3 · 队伍 4"},
-      {"value": "4-1", "label": "分组 4 · 队伍 1"},
-      {"value": "4-2", "label": "分组 4 · 队伍 2"},
-      {"value": "4-3", "label": "分组 4 · 队伍 3"},
-      {"value": "4-4", "label": "分组 4 · 队伍 4"},
-      {"value": "5-1", "label": "分组 5 · 队伍 1"},
-      {"value": "5-2", "label": "分组 5 · 队伍 2"},
-      {"value": "5-3", "label": "分组 5 · 队伍 3"},
-      {"value": "5-4", "label": "分组 5 · 队伍 4"},
-      {"value": "6-1", "label": "分组 6 · 队伍 1"},
-      {"value": "6-2", "label": "分组 6 · 队伍 2"},
-      {"value": "6-3", "label": "分组 6 · 队伍 3"},
-      {"value": "6-4", "label": "分组 6 · 队伍 4"},
-      {"value": "7-1", "label": "分组 7 · 队伍 1"},
-      {"value": "7-2", "label": "分组 7 · 队伍 2"},
-      {"value": "7-3", "label": "分组 7 · 队伍 3"},
-      {"value": "7-4", "label": "分组 7 · 队伍 4"}
-    ]
+      {
+        "value": "none",
+        "label": "不切换（保持当前身上御魂）"
+      },
+      {
+        "value": "1-1",
+        "label": "分组 1 · 队伍 1"
+      },
+      {
+        "value": "1-2",
+        "label": "分组 1 · 队伍 2"
+      },
+      {
+        "value": "1-3",
+        "label": "分组 1 · 队伍 3"
+      },
+      {
+        "value": "1-4",
+        "label": "分组 1 · 队伍 4"
+      },
+      {
+        "value": "2-1",
+        "label": "分组 2 · 队伍 1"
+      },
+      {
+        "value": "2-2",
+        "label": "分组 2 · 队伍 2"
+      },
+      {
+        "value": "2-3",
+        "label": "分组 2 · 队伍 3"
+      },
+      {
+        "value": "2-4",
+        "label": "分组 2 · 队伍 4"
+      },
+      {
+        "value": "3-1",
+        "label": "分组 3 · 队伍 1"
+      },
+      {
+        "value": "3-2",
+        "label": "分组 3 · 队伍 2"
+      },
+      {
+        "value": "3-3",
+        "label": "分组 3 · 队伍 3"
+      },
+      {
+        "value": "3-4",
+        "label": "分组 3 · 队伍 4"
+      },
+      {
+        "value": "4-1",
+        "label": "分组 4 · 队伍 1"
+      },
+      {
+        "value": "4-2",
+        "label": "分组 4 · 队伍 2"
+      },
+      {
+        "value": "4-3",
+        "label": "分组 4 · 队伍 3"
+      },
+      {
+        "value": "4-4",
+        "label": "分组 4 · 队伍 4"
+      },
+      {
+        "value": "5-1",
+        "label": "分组 5 · 队伍 1"
+      },
+      {
+        "value": "5-2",
+        "label": "分组 5 · 队伍 2"
+      },
+      {
+        "value": "5-3",
+        "label": "分组 5 · 队伍 3"
+      },
+      {
+        "value": "5-4",
+        "label": "分组 5 · 队伍 4"
+      },
+      {
+        "value": "6-1",
+        "label": "分组 6 · 队伍 1"
+      },
+      {
+        "value": "6-2",
+        "label": "分组 6 · 队伍 2"
+      },
+      {
+        "value": "6-3",
+        "label": "分组 6 · 队伍 3"
+      },
+      {
+        "value": "6-4",
+        "label": "分组 6 · 队伍 4"
+      },
+      {
+        "value": "7-1",
+        "label": "分组 7 · 队伍 1"
+      },
+      {
+        "value": "7-2",
+        "label": "分组 7 · 队伍 2"
+      },
+      {
+        "value": "7-3",
+        "label": "分组 7 · 队伍 3"
+      },
+      {
+        "value": "7-4",
+        "label": "分组 7 · 队伍 4"
+      }
+    ],
+    "stepId": "switch-soul"
   },
   {
     "id": "eventType",
@@ -53,11 +141,24 @@
     "description": "选择当前开放的版本或限时活动类型",
     "recommended": "tower",
     "options": [
-      {"value": "tower", "label": "月度版本活动 · 通用自动爬塔（推荐）"},
-      {"value": "uberBoss", "label": "超鬼王 · 自动召唤鬼王与征伐挑战"},
-      {"value": "frogQuiz", "label": "对弈竞猜 · 自动领上轮奖励并押注 30 万"},
-      {"value": "floatParade", "label": "花车巡游 · 自动领取放置里程与旅途任务"}
-    ]
+      {
+        "value": "tower",
+        "label": "月度版本活动 · 通用自动爬塔（推荐）"
+      },
+      {
+        "value": "uberBoss",
+        "label": "超鬼王 · 自动召唤鬼王与征伐挑战"
+      },
+      {
+        "value": "frogQuiz",
+        "label": "对弈竞猜 · 自动领上轮奖励并押注 30 万"
+      },
+      {
+        "value": "floatParade",
+        "label": "花车巡游 · 自动领取放置里程与旅途任务"
+      }
+    ],
+    "stepId": "run-version-event"
   },
   {
     "id": "rounds",
@@ -68,11 +169,24 @@
     "description": "单次执行连续挑战多少局",
     "recommended": "20",
     "options": [
-      {"value": "10", "label": "10 局"},
-      {"value": "20", "label": "20 局（推荐）"},
-      {"value": "50", "label": "50 局（清门票/体力）"},
-      {"value": "100", "label": "100 局（长挂机）"}
-    ]
+      {
+        "value": "10",
+        "label": "10 局"
+      },
+      {
+        "value": "20",
+        "label": "20 局（推荐）"
+      },
+      {
+        "value": "50",
+        "label": "50 局（清门票/体力）"
+      },
+      {
+        "value": "100",
+        "label": "100 局（长挂机）"
+      }
+    ],
+    "stepId": "run-version-event"
   },
   {
     "id": "returnHome",
@@ -80,7 +194,8 @@
     "widget": "SWITCH",
     "section": "收尾",
     "description": "活动执行结束后是否自动返回庭院",
-    "recommended": false
+    "recommended": false,
+    "stepId": "return-courtyard"
   }
 ]
 

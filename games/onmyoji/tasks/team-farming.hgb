@@ -13,36 +13,124 @@
     "description": "开战前自动前往庭院式神录→预设面板，一键装配指定分组与队伍的御魂预设",
     "recommended": "none",
     "options": [
-      {"value": "none", "label": "不切换（保持当前身上御魂）"},
-      {"value": "1-1", "label": "分组 1 · 队伍 1"},
-      {"value": "1-2", "label": "分组 1 · 队伍 2"},
-      {"value": "1-3", "label": "分组 1 · 队伍 3"},
-      {"value": "1-4", "label": "分组 1 · 队伍 4"},
-      {"value": "2-1", "label": "分组 2 · 队伍 1"},
-      {"value": "2-2", "label": "分组 2 · 队伍 2"},
-      {"value": "2-3", "label": "分组 2 · 队伍 3"},
-      {"value": "2-4", "label": "分组 2 · 队伍 4"},
-      {"value": "3-1", "label": "分组 3 · 队伍 1"},
-      {"value": "3-2", "label": "分组 3 · 队伍 2"},
-      {"value": "3-3", "label": "分组 3 · 队伍 3"},
-      {"value": "3-4", "label": "分组 3 · 队伍 4"},
-      {"value": "4-1", "label": "分组 4 · 队伍 1"},
-      {"value": "4-2", "label": "分组 4 · 队伍 2"},
-      {"value": "4-3", "label": "分组 4 · 队伍 3"},
-      {"value": "4-4", "label": "分组 4 · 队伍 4"},
-      {"value": "5-1", "label": "分组 5 · 队伍 1"},
-      {"value": "5-2", "label": "分组 5 · 队伍 2"},
-      {"value": "5-3", "label": "分组 5 · 队伍 3"},
-      {"value": "5-4", "label": "分组 5 · 队伍 4"},
-      {"value": "6-1", "label": "分组 6 · 队伍 1"},
-      {"value": "6-2", "label": "分组 6 · 队伍 2"},
-      {"value": "6-3", "label": "分组 6 · 队伍 3"},
-      {"value": "6-4", "label": "分组 6 · 队伍 4"},
-      {"value": "7-1", "label": "分组 7 · 队伍 1"},
-      {"value": "7-2", "label": "分组 7 · 队伍 2"},
-      {"value": "7-3", "label": "分组 7 · 队伍 3"},
-      {"value": "7-4", "label": "分组 7 · 队伍 4"}
-    ]
+      {
+        "value": "none",
+        "label": "不切换（保持当前身上御魂）"
+      },
+      {
+        "value": "1-1",
+        "label": "分组 1 · 队伍 1"
+      },
+      {
+        "value": "1-2",
+        "label": "分组 1 · 队伍 2"
+      },
+      {
+        "value": "1-3",
+        "label": "分组 1 · 队伍 3"
+      },
+      {
+        "value": "1-4",
+        "label": "分组 1 · 队伍 4"
+      },
+      {
+        "value": "2-1",
+        "label": "分组 2 · 队伍 1"
+      },
+      {
+        "value": "2-2",
+        "label": "分组 2 · 队伍 2"
+      },
+      {
+        "value": "2-3",
+        "label": "分组 2 · 队伍 3"
+      },
+      {
+        "value": "2-4",
+        "label": "分组 2 · 队伍 4"
+      },
+      {
+        "value": "3-1",
+        "label": "分组 3 · 队伍 1"
+      },
+      {
+        "value": "3-2",
+        "label": "分组 3 · 队伍 2"
+      },
+      {
+        "value": "3-3",
+        "label": "分组 3 · 队伍 3"
+      },
+      {
+        "value": "3-4",
+        "label": "分组 3 · 队伍 4"
+      },
+      {
+        "value": "4-1",
+        "label": "分组 4 · 队伍 1"
+      },
+      {
+        "value": "4-2",
+        "label": "分组 4 · 队伍 2"
+      },
+      {
+        "value": "4-3",
+        "label": "分组 4 · 队伍 3"
+      },
+      {
+        "value": "4-4",
+        "label": "分组 4 · 队伍 4"
+      },
+      {
+        "value": "5-1",
+        "label": "分组 5 · 队伍 1"
+      },
+      {
+        "value": "5-2",
+        "label": "分组 5 · 队伍 2"
+      },
+      {
+        "value": "5-3",
+        "label": "分组 5 · 队伍 3"
+      },
+      {
+        "value": "5-4",
+        "label": "分组 5 · 队伍 4"
+      },
+      {
+        "value": "6-1",
+        "label": "分组 6 · 队伍 1"
+      },
+      {
+        "value": "6-2",
+        "label": "分组 6 · 队伍 2"
+      },
+      {
+        "value": "6-3",
+        "label": "分组 6 · 队伍 3"
+      },
+      {
+        "value": "6-4",
+        "label": "分组 6 · 队伍 4"
+      },
+      {
+        "value": "7-1",
+        "label": "分组 7 · 队伍 1"
+      },
+      {
+        "value": "7-2",
+        "label": "分组 7 · 队伍 2"
+      },
+      {
+        "value": "7-3",
+        "label": "分组 7 · 队伍 3"
+      },
+      {
+        "value": "7-4",
+        "label": "分组 7 · 队伍 4"
+      }
+    ],
+    "stepId": "switch-soul"
   },
   {
     "id": "role",
@@ -53,9 +141,16 @@
     "description": "主号选“房主队长”（任务默认即队长）；小号由主号联动唤醒时会自动设为“跟车队员”",
     "recommended": "leader",
     "options": [
-      {"value": "leader", "label": "房主队长 · 主号（自动建房 + 邀请 1～2 位队友 + 发起挑战）"},
-      {"value": "member", "label": "跟车队员 · 次号（回庭院待命 + 自动接邀请与结算）"}
-    ]
+      {
+        "value": "leader",
+        "label": "房主队长 · 主号（自动建房 + 邀请 1～2 位队友 + 发起挑战）"
+      },
+      {
+        "value": "member",
+        "label": "跟车队员 · 次号（回庭院待命 + 自动接邀请与结算）"
+      }
+    ],
+    "stepId": "create-room-and-invite"
   },
   {
     "id": "teamMode",
@@ -65,12 +160,25 @@
     "section": "主次角色与联动",
     "description": "支持 2 人私密队、3 人全自建私密队，或先拉 1 个小号再公开匹配第 3 位路人",
     "recommended": "private2",
-    "visibleWhen": {"field": "role", "contains": "leader"},
+    "visibleWhen": {
+      "field": "role",
+      "contains": "leader"
+    },
     "options": [
-      {"value": "private2", "label": "2 人全自建私密队（1 主 + 1 从，不公开，2 人进房即开）"},
-      {"value": "private3", "label": "3 人全自建私密队（1 主 + 2 从，不公开，连续邀请 2 位小号凑满 3 人开）"},
-      {"value": "hybrid3", "label": "2 人自建 + 第 3 位公开匹配野人（邀请 1 位小号并公开匹配路人凑 3 人开）"}
-    ]
+      {
+        "value": "private2",
+        "label": "2 人全自建私密队（1 主 + 1 从，不公开，2 人进房即开）"
+      },
+      {
+        "value": "private3",
+        "label": "3 人全自建私密队（1 主 + 2 从，不公开，连续邀请 2 位小号凑满 3 人开）"
+      },
+      {
+        "value": "hybrid3",
+        "label": "2 人自建 + 第 3 位公开匹配野人（邀请 1 位小号并公开匹配路人凑 3 人开）"
+      }
+    ],
+    "stepId": "create-room-and-invite"
   },
   {
     "id": "partnerAccount",
@@ -78,7 +186,11 @@
     "widget": "TEXT",
     "section": "主次角色与联动",
     "description": "可按需覆盖填写 1 号小号的名称、游戏昵称或编号；留空则使用账号详情页绑定的默认协战搭子",
-    "visibleWhen": {"field": "role", "contains": "leader"}
+    "visibleWhen": {
+      "field": "role",
+      "contains": "leader"
+    },
+    "stepId": "create-room-and-invite"
   },
   {
     "id": "partnerAccount2",
@@ -86,7 +198,11 @@
     "widget": "TEXT",
     "section": "主次角色与联动",
     "description": "3 人全自建私密队模式下唤醒的第 2 个小号名称、游戏昵称或编号",
-    "visibleWhen": {"field": "role", "contains": "leader"}
+    "visibleWhen": {
+      "field": "role",
+      "contains": "leader"
+    },
+    "stepId": "create-room-and-invite"
   },
   {
     "id": "dungeon",
@@ -96,19 +212,53 @@
     "section": "组队副本与建房",
     "description": "若队长启动时还在庭院或探索地图，将自动前往该副本创建协战房间并邀请队友；若已在房间内则直接开刷",
     "recommended": "orochi11",
-    "visibleWhen": {"field": "role", "contains": "leader"},
+    "visibleWhen": {
+      "field": "role",
+      "contains": "leader"
+    },
     "options": [
-      {"value": "inRoom", "label": "已在协战房间内（不重新建房，直接开刷）"},
-      {"value": "orochi11", "label": "八岐大蛇 · 悲鸣（魂十一 / 魂土）"},
-      {"value": "orochi12", "label": "八岐大蛇 · 神罚（魂十二 / 魂王）"},
-      {"value": "orochi10", "label": "八岐大蛇 · 拾层（魂十）"},
-      {"value": "fallenSun", "label": "日轮之陨 · 叁层"},
-      {"value": "eternitySea", "label": "永生之海 · 肆层"},
-      {"value": "evoFire", "label": "觉醒材料 · 业火轮（火麒麟）"},
-      {"value": "evoWind", "label": "觉醒材料 · 风转符（风麒麟）"},
-      {"value": "evoWater", "label": "觉醒材料 · 水灵鲤（水麒麟）"},
-      {"value": "evoThunder", "label": "觉醒材料 · 天雷鼓（雷麒麟）"}
-    ]
+      {
+        "value": "inRoom",
+        "label": "已在协战房间内（不重新建房，直接开刷）"
+      },
+      {
+        "value": "orochi11",
+        "label": "八岐大蛇 · 悲鸣（魂十一 / 魂土）"
+      },
+      {
+        "value": "orochi12",
+        "label": "八岐大蛇 · 神罚（魂十二 / 魂王）"
+      },
+      {
+        "value": "orochi10",
+        "label": "八岐大蛇 · 拾层（魂十）"
+      },
+      {
+        "value": "fallenSun",
+        "label": "日轮之陨 · 叁层"
+      },
+      {
+        "value": "eternitySea",
+        "label": "永生之海 · 肆层"
+      },
+      {
+        "value": "evoFire",
+        "label": "觉醒材料 · 业火轮（火麒麟）"
+      },
+      {
+        "value": "evoWind",
+        "label": "觉醒材料 · 风转符（风麒麟）"
+      },
+      {
+        "value": "evoWater",
+        "label": "觉醒材料 · 水灵鲤（水麒麟）"
+      },
+      {
+        "value": "evoThunder",
+        "label": "觉醒材料 · 天雷鼓（雷麒麟）"
+      }
+    ],
+    "stepId": "create-room-and-invite"
   },
   {
     "id": "inviteSource",
@@ -118,13 +268,29 @@
     "section": "组队副本与建房",
     "description": "队长建好房间点击“+”号后，从哪个页签点选前 1～2 位协战小号发送邀请",
     "recommended": "recent",
-    "visibleWhen": {"field": "role", "contains": "leader"},
+    "visibleWhen": {
+      "field": "role",
+      "contains": "leader"
+    },
     "options": [
-      {"value": "recent", "label": "最近组队页签前 1～2 位（固定大小号搭子推荐）"},
-      {"value": "friend", "label": "好友列表页签前 1～2 位（同区星标好友推荐）"},
-      {"value": "cross", "label": "跨区好友页签前 1～2 位（跨区大小号推荐）"},
-      {"value": "guild", "label": "寮友列表页签前 1～2 位（同寮大小号推荐）"}
-    ]
+      {
+        "value": "recent",
+        "label": "最近组队页签前 1～2 位（固定大小号搭子推荐）"
+      },
+      {
+        "value": "friend",
+        "label": "好友列表页签前 1～2 位（同区星标好友推荐）"
+      },
+      {
+        "value": "cross",
+        "label": "跨区好友页签前 1～2 位（跨区大小号推荐）"
+      },
+      {
+        "value": "guild",
+        "label": "寮友列表页签前 1～2 位（同寮大小号推荐）"
+      }
+    ],
+    "stepId": "create-room-and-invite"
   },
   {
     "id": "rounds",
@@ -135,11 +301,24 @@
     "description": "连续组队挑战多少局",
     "recommended": "30",
     "options": [
-      {"value": "10", "label": "10 局"},
-      {"value": "30", "label": "30 局（推荐，同心队寮30）"},
-      {"value": "60", "label": "60 局"},
-      {"value": "100", "label": "100 局（长挂机）"}
-    ]
+      {
+        "value": "10",
+        "label": "10 局"
+      },
+      {
+        "value": "30",
+        "label": "30 局（推荐，同心队寮30）"
+      },
+      {
+        "value": "60",
+        "label": "60 局"
+      },
+      {
+        "value": "100",
+        "label": "100 局（长挂机）"
+      }
+    ],
+    "stepId": "coop-battle-loop"
   },
   {
     "id": "returnHome",
@@ -147,7 +326,8 @@
     "widget": "SWITCH",
     "section": "收尾",
     "description": "组队刷本达到设定局数后是否退回庭院",
-    "recommended": false
+    "recommended": false,
+    "stepId": "return-courtyard"
   }
 ]
 

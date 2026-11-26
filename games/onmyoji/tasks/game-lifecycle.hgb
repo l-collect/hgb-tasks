@@ -13,10 +13,20 @@
     "description": "可选择拉起游戏完成更新并停在庭院、周三热更核验后退回登录页待命，或直接从庭院退出当前账号登录",
     "recommended": "launchAndUpdate",
     "options": [
-      {"value": "launchAndUpdate", "label": "启动并更新游戏 · 自动完成热更与公告清理并进入庭院（推荐）"},
-      {"value": "updateAndExit", "label": "周三维护热更 · 更新并进庭院核验后立即退回登录页待命"},
-      {"value": "exitToLogin", "label": "退出当前登录 · 从庭院经头像用户中心安全退回登录界面"}
-    ]
+      {
+        "value": "launchAndUpdate",
+        "label": "启动并更新游戏 · 自动完成热更与公告清理并进入庭院（推荐）"
+      },
+      {
+        "value": "updateAndExit",
+        "label": "周三维护热更 · 更新并进庭院核验后立即退回登录页待命"
+      },
+      {
+        "value": "exitToLogin",
+        "label": "退出当前登录 · 从庭院经头像用户中心安全退回登录界面"
+      }
+    ],
+    "stepId": "launch-and-hot-update"
   },
   {
     "id": "claimLoginPopup",
@@ -24,7 +34,8 @@
     "widget": "SWITCH",
     "section": "生命周期管理",
     "description": "登录进入庭院后若弹出每日吉签或奖励弹窗，自动点击收起确保庭院干净可用",
-    "recommended": true
+    "recommended": true,
+    "stepId": "clear-courtyard-popups"
   }
 ]
 
