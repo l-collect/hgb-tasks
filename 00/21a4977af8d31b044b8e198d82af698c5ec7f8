@@ -1,0 +1,23 @@
+games/onmyoji/snippets/tap-confirm-word.hgb
+  s_75c1698e4ed8c2::t_2f49306c9d5161 1
+games/onmyoji/snippets/tap-cancel-dialog.hgb
+  s_75c1698e4ed8c2::t_2f49306c9d5161 1
+games/onmyoji/game.json
+  s_75c1698e4ed8c2::t_805883aa6a914b 249-281,2337-2338
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "0021a4977af8d31b044b8e198d82af698c5ec7f8",
+  "prompts": {},
+  "sessions": {
+    "s_75c1698e4ed8c2": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "deeba1b2-1cf7-4393-9fbc-f56993a97797",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Class Liu <1659488338@qq.com>"
+    }
+  }
+}
