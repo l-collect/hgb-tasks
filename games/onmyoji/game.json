@@ -246,6 +246,39 @@
             ]
           },
           "use": "tap-cancel"
+        },
+        {
+          "id": "maxed-shikigami-extract",
+          "name": "结界满级式神提取",
+          "state": {
+            "id": "maxed-shikigami-extract",
+            "text": [
+              {
+                "text": "是否提取",
+                "minimumConfidence": 0.8,
+                "within": [
+                  700,
+                  280,
+                  1000,
+                  280
+                ],
+                "contains": true
+              }
+            ]
+          },
+          "maximum": 3,
+          "choices": [
+            {
+              "id": "extract",
+              "name": "提取",
+              "use": "tap-confirm-word"
+            },
+            {
+              "id": "keep",
+              "name": "不提取",
+              "use": "tap-cancel-dialog"
+            }
+          ]
         }
       ],
       "colors": {
@@ -2301,6 +2334,8 @@
     "tap-confirm",
     "tap-reject",
     "tap-cancel",
+    "tap-confirm-word",
+    "tap-cancel-dialog",
     "close-new-shikigami",
     "daily-gift-step",
     "flower-step",
